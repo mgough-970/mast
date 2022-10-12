@@ -1,3 +1,16 @@
-# STScI Notebook Repository Template
+# Welcome to your Jupyter Book
 
-This is the template that should be used to structure your notebook repository to worth with the STScI notebook CI system.
+This is a small sample book to give you a feel for how book content is
+structured.
+
+:::{note}
+Here is a note!
+:::
+
+And here is a code block:
+
+```
+e = mc^2
+```
+
+Check out the content pages bundled with this sample book to see more.

@@ -1,9 +1,9 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: Notebook repository template (CHANGE THIS)
-author: STScI (CHANGE AS NEEDED)
-logo: logo.png (CHANGE AS NEEDED)
+title: MAST repository template
+author: STScI
+logo: logo.png
 
 html:
   google_analytics_id: 
