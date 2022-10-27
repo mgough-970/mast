@@ -5,7 +5,7 @@
 ## Each job runs on its own runner with an independent environment, with the exception of the 
 ## HTML generation, which occurs on a single runner using the global environment.
 
-name: MatrixTest
+name: Notebook Execution and Validation
 on: 
   pull_request:
     branches:
