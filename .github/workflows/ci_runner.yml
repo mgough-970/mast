@@ -64,6 +64,9 @@ jobs:
           pip install pytest
           pip install nbval
           pip install nbconvert
+      - name: Security testing with Bandit
+        run: | 
+          bandit "${{ matrix.notebooks }}"
       - name: Execute notebooks
         run: |
           jupyter nbconvert --template classic --to html --execute "${{ matrix.notebooks }}"
