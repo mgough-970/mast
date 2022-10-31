@@ -64,6 +64,7 @@ jobs:
           pip install pytest
           pip install nbval
           pip install nbconvert
+          pip install bandit
       - name: Security testing with Bandit
         run: | 
           bandit "${{ matrix.notebooks }}"
