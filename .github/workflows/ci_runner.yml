@@ -37,7 +37,7 @@ jobs:
       run: |
         IFS=',' read -r -a array <<< "${{steps.get-changed-files.outputs.all_changed_files}}"
         echo "{$array}"
-        echo "::$GITHUB_OUTPUT name=matrix::$(jq --compact-output --null-input '$ARGS.positional' --args -- "${array[@]}")"
+        echo "::${{GITHUB_OUTPUT}} name=matrix::$(jq --compact-output --null-input '$ARGS.positional' --args -- "${array[@]}")"
    
   notebook-execution:
     needs: gather-notebooks
