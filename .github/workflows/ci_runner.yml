@@ -5,7 +5,9 @@
 ## Each job runs on its own runner with an independent environment, with the exception of the 
 ## HTML generation, which occurs on a single runner using the global environment.
 
+  
 name: Notebook Execution and Validation
+
 on: 
   pull_request:
     branches:
@@ -13,9 +15,12 @@ on:
     paths:
       - 'notebooks/**.ipynb'
       - '*.yml'
+      
 env:
-  ARCH_ON_CI: "normal"
+  CASJOBS_PW: ${{ secrets.CASJOBS_PW }}
+  CASJOBS_USERID: ${{ secrets.CASJOBS_USERID }}
 
 jobs:
   NotebookExecutionValidation:
    uses: TheRealZoidberg/reusableTest/.github/workflows/ci_runner.yml@main
+
