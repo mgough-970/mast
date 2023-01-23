@@ -7,19 +7,24 @@ parts:
     chapters:
     - file:  notebooks/MAST/astroquery/large_downloads/large_downloads.ipynb
     - file:  notebooks/MAST/astroquery/beginner_search_astroquery/beginner_search_astroquery.ipynb
-   - caption: HSC
+  - caption: TESS
     chapters:
-    - file:  notebooks/MAST/HSC/HSCV3_API/hscv3_api.ipynb
-    - file:  notebooks/MAST/HSC/HCV_CASJOBS/HCV_casjobs_demo.ipynb
-    - file:  notebooks/MAST/HSC/HSC_TAP/HSC_TAP.ipynb
-    - file:  notebooks/MAST/HSC/SWEEPS_HSCV3P1_API/sweeps_hscv3p1_api.ipynb
-    - file:  notebooks/MAST/HSC/HSCV3_SMC_API/hscv3_smc_api.ipynb
-    - file:  notebooks/MAST/HSC/HCV_API/HCV_API_demo.ipynb
-    - file:  notebooks/MAST/HSC/SWEEPS_HSCV3P1/sweeps_hscv3p1.ipynb
-  - caption: JWST
-    chapters:
-    - file:  notebooks/MAST/JWST/Engineering_Database_Retreival/EDB_Retrieval.ipynb
-    - file:  notebooks/MAST/JWST/download_by_program_id/download_by_program_id.ipynb
+    - file:  notebooks/MAST/TESS/interm_tesscut_requests/interm_tesscut_requests.ipynb
+    - file:  notebooks/MAST/TESS/beginner_tour_lc_tp/beginner_tour_lc_tp.ipynb
+    - file:  notebooks/MAST/TESS/beginner_tic_search_hd209458/beginner_tic_search_hd209458.ipynb
+    - file:  notebooks/MAST/TESS/beginner_how_to_use_lc/beginner_how_to_use_lc.ipynb
+    - file:  notebooks/MAST/TESS/interm_gi_query/interm_gi_query.ipynb
+    - file:  notebooks/MAST/TESS/beginner_how_to_use_tp/beginner_how_to_use_tp.ipynb
+    - file:  notebooks/MAST/TESS/interm_tesscut_astroquery/interm_tesscut_astroquery.ipynb
+    - file:  notebooks/MAST/TESS/beginner_tess_exomast/beginner_tess_exomast.ipynb
+    - file:  notebooks/MAST/TESS/beginner_how_to_use_dvt/beginner_how_to_use_dvt.ipynb
+    - file:  notebooks/MAST/TESS/beginner_astroquery_dv/beginner_astroquery_dv.ipynb
+    - file:  notebooks/MAST/TESS/interm_tasc_lc/interm_tasc_lc.ipynb
+    - file:  notebooks/MAST/TESS/beginner_how_to_use_ffi/beginner_how_to_use_ffi.ipynb
+    - file:  notebooks/MAST/TESS/tess_removing_scattered_light_using_regression/tess_removing_scattered_light_using_regression.ipynb
+    - file:  notebooks/MAST/TESS/beginner_tess_tap_search/beginner_tess_tap_search.ipynb
+    - file:  notebooks/MAST/TESS/interm_tesscut_dss_overlay/interm_tesscut_dss_overlay.ipynb
+    - file:  notebooks/MAST/TESS/interm_tess_prf_retrieve/interm_tess_prf_retrieve.ipynb
   - caption: Kepler K2
     chapters:
     - file:  notebooks/MAST/K2/K2_TPF/K2_TPF.ipynb
@@ -50,24 +55,19 @@ parts:
     - file:  notebooks/MAST/Kepler/kepler_visualizing_periodic_signals_using_a_river_plot/kepler_visualizing_periodic_signals_using_a_river_plot.ipynb
     - file:  notebooks/MAST/Kepler/kepler_how_to_understand_and_manipulate_the_periodogram_of_an_oscillating_star/kepler_how_to_understand_and_manipulate_the_periodogram_of_an_oscillating_star.ipynb
     - file:  notebooks/MAST/Kepler/kepler_creating_your_own_light_curves/kepler_creating_your_own_light_curves.ipynb
+  - caption: HSC
+    chapters:
+    - file:  notebooks/MAST/HSC/HSCV3_API/hscv3_api.ipynb
+    - file:  notebooks/MAST/HSC/HCV_CASJOBS/HCV_casjobs_demo.ipynb
+    - file:  notebooks/MAST/HSC/HSC_TAP/HSC_TAP.ipynb
+    - file:  notebooks/MAST/HSC/SWEEPS_HSCV3P1_API/sweeps_hscv3p1_api.ipynb
+    - file:  notebooks/MAST/HSC/HSCV3_SMC_API/hscv3_smc_api.ipynb
+    - file:  notebooks/MAST/HSC/HCV_API/HCV_API_demo.ipynb
+    - file:  notebooks/MAST/HSC/SWEEPS_HSCV3P1/sweeps_hscv3p1.ipynb
   - caption: PanSTARRS
     chapters:
     - file:  notebooks/MAST/PanSTARRS/PS1_DR2_TAP/PS1_DR2_TAP.ipynb
-  - caption: TESS
+  - caption: JWST
     chapters:
-    - file:  notebooks/MAST/TESS/interm_tesscut_requests/interm_tesscut_requests.ipynb
-    - file:  notebooks/MAST/TESS/beginner_tour_lc_tp/beginner_tour_lc_tp.ipynb
-    - file:  notebooks/MAST/TESS/beginner_tic_search_hd209458/beginner_tic_search_hd209458.ipynb
-    - file:  notebooks/MAST/TESS/beginner_how_to_use_lc/beginner_how_to_use_lc.ipynb
-    - file:  notebooks/MAST/TESS/interm_gi_query/interm_gi_query.ipynb
-    - file:  notebooks/MAST/TESS/beginner_how_to_use_tp/beginner_how_to_use_tp.ipynb
-    - file:  notebooks/MAST/TESS/interm_tesscut_astroquery/interm_tesscut_astroquery.ipynb
-    - file:  notebooks/MAST/TESS/beginner_tess_exomast/beginner_tess_exomast.ipynb
-    - file:  notebooks/MAST/TESS/beginner_how_to_use_dvt/beginner_how_to_use_dvt.ipynb
-    - file:  notebooks/MAST/TESS/beginner_astroquery_dv/beginner_astroquery_dv.ipynb
-    - file:  notebooks/MAST/TESS/interm_tasc_lc/interm_tasc_lc.ipynb
-    - file:  notebooks/MAST/TESS/beginner_how_to_use_ffi/beginner_how_to_use_ffi.ipynb
-    - file:  notebooks/MAST/TESS/tess_removing_scattered_light_using_regression/tess_removing_scattered_light_using_regression.ipynb
-    - file:  notebooks/MAST/TESS/beginner_tess_tap_search/beginner_tess_tap_search.ipynb
-    - file:  notebooks/MAST/TESS/interm_tesscut_dss_overlay/interm_tesscut_dss_overlay.ipynb
-    - file:  notebooks/MAST/TESS/interm_tess_prf_retrieve/interm_tess_prf_retrieve.ipynb
+    - file:  notebooks/MAST/JWST/Engineering_Database_Retreival/EDB_Retrieval.ipynb
+    - file:  notebooks/MAST/JWST/download_by_program_id/download_by_program_id.ipynb
