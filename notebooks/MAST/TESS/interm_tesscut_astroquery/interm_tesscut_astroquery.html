@@ -27,6 +27,7 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/main.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/table.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -1118,15 +1119,17 @@ For tesscut, <em><strong>x</strong></em> refers to the CCD columns and <em><stro
 <span class="g g-Whitespace">    </span><span class="mi">219</span>         <span class="sa">f</span><span class="s2">&quot;-----------------------------------------&quot;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">220</span> <span class="n">log</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;HTTP response</span><span class="se">\n</span><span class="si">{</span><span class="n">response_log</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
-<span class="nn">File /usr/share/miniconda/lib/python3.10/textwrap.py:488,</span> in <span class="ni">indent</span><span class="nt">(text, prefix, predicate)</span>
-<span class="g g-Whitespace">    </span><span class="mi">486</span>     <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">text</span><span class="o">.</span><span class="n">splitlines</span><span class="p">(</span><span class="kc">True</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">487</span>         <span class="k">yield</span> <span class="p">(</span><span class="n">prefix</span> <span class="o">+</span> <span class="n">line</span> <span class="k">if</span> <span class="n">predicate</span><span class="p">(</span><span class="n">line</span><span class="p">)</span> <span class="k">else</span> <span class="n">line</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">488</span> <span class="k">return</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">prefixed_lines</span><span class="p">())</span>
-
-<span class="nn">File /usr/share/miniconda/lib/python3.10/textwrap.py:486,</span> in <span class="ni">indent.&lt;locals&gt;.prefixed_lines</span><span class="nt">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">485</span> <span class="k">def</span> <span class="nf">prefixed_lines</span><span class="p">():</span>
-<span class="ne">--&gt; </span><span class="mi">486</span>     <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">text</span><span class="o">.</span><span class="n">splitlines</span><span class="p">(</span><span class="kc">True</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">487</span>         <span class="k">yield</span> <span class="p">(</span><span class="n">prefix</span> <span class="o">+</span> <span class="n">line</span> <span class="k">if</span> <span class="n">predicate</span><span class="p">(</span><span class="n">line</span><span class="p">)</span> <span class="k">else</span> <span class="n">line</span><span class="p">)</span>
+<span class="nn">File /usr/share/miniconda/lib/python3.10/textwrap.py:473,</span> in <span class="ni">indent</span><span class="nt">(text, prefix, predicate)</span>
+<span class="g g-Whitespace">    </span><span class="mi">469</span>         <span class="n">text</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;(?m)^&#39;</span> <span class="o">+</span> <span class="n">margin</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">470</span>     <span class="k">return</span> <span class="n">text</span>
+<span class="ne">--&gt; </span><span class="mi">473</span> <span class="k">def</span> <span class="nf">indent</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">prefix</span><span class="p">,</span> <span class="n">predicate</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">474</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Adds &#39;prefix&#39; to the beginning of selected lines in &#39;text&#39;.</span>
+<span class="g g-Whitespace">    </span><span class="mi">475</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">476</span><span class="sd">     If &#39;predicate&#39; is provided, &#39;prefix&#39; will only be added to the lines</span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">    </span><span class="mi">479</span><span class="sd">     consist solely of whitespace characters.</span>
+<span class="g g-Whitespace">    </span><span class="mi">480</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">481</span>     <span class="k">if</span> <span class="n">predicate</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>

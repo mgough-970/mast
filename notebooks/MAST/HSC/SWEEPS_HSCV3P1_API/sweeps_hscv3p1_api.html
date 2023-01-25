@@ -27,6 +27,7 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/main.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/table.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -1329,7 +1330,7 @@ title="Print to PDF"
 </pre></div>
 </div>
 <div class="output text_html"><div><i>Table length=5</i>
-<table id="table140216218791952" class="table-striped table-bordered table-condensed">
+<table id="table140710416949856" class="table-striped table-bordered table-condensed">
 <thead><tr><th>name</th><th>type</th><th>description</th></tr></thead>
 <thead><tr><th>str16</th><th>str5</th><th>str31</th></tr></thead>
 <tr><td>objID</td><td>long</td><td>objID_descriptionTBD</td></tr>
@@ -1393,14 +1394,14 @@ These constraints can be modified depending on your science goals.</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>https://catalogs.mast.stsci.edu/api/v0.1/hsc/v3/propermotions.csv?pagesize=500000&amp;NumFilters.gt=1&amp;NumVisits.gt=9&amp;NumImages.gt=19&amp;columns=%5BObjID%2CraMean%2CdecMean%2CraMeanErr%2CdecMeanErr%2CNumFilters%2CNumVisits%2CpmLat%2CpmLon%2CpmLatErr%2CpmLonErr%2CpmLatDev%2CpmLonDev%2CepochMean%2CepochStart%2CepochEnd%5D
-9.8 s: retrieved data
+10.2 s: retrieved data
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>24.1 s: converted to astropy table
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>24.9 s: converted to astropy table
 </pre></div>
 </div>
 <div class="output text_html"><div><i>Table length=462899</i>
-<table id="table140217130802944" class="table-striped table-bordered table-condensed">
+<table id="table140711329109456" class="table-striped table-bordered table-condensed">
 <thead><tr><th>ObjID</th><th>RA</th><th>Dec</th><th>RAerr</th><th>Decerr</th><th>NumFilters</th><th>NumVisits</th><th>bpm</th><th>lpm</th><th>bpmerr</th><th>lpmerr</th><th>pmdev</th><th>yr</th><th>dT</th><th>yrStart</th><th>yrEnd</th></tr></thead>
 <thead><tr><th>int64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>int64</th><th>int64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th></tr></thead>
 <tr><td>4000709005772</td><td>269.8032791332062</td><td>-29.204397818738514</td><td>0.2760664330930518</td><td>0.6800629576003355</td><td>2</td><td>47</td><td>1.7252066042170195</td><td>-8.265631162518687</td><td>0.15792326495579656</td><td>0.40922581911703787</td><td>2.7234415093372917</td><td>2013.3007902147058</td><td>11.371914541371764</td><td>2003.4361796620085</td><td>2014.8080942033803</td></tr>
@@ -1548,10 +1549,10 @@ These constraints can be modified depending on your science goals.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>kde took 2.0 sec
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>kde took 2.1 sec
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Plotting 181987 of 461199 points
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Plotting 190577 of 461199 points
 </pre></div>
 </div>
 </div>
@@ -1774,12 +1775,74 @@ These constraints can be modified depending on your science goals.</p>
 <img alt="../../../../_images/sweeps_hscv3p1_api_37_17.png" src="../../../../_images/sweeps_hscv3p1_api_37_17.png" />
 <img alt="../../../../_images/sweeps_hscv3p1_api_37_18.png" src="../../../../_images/sweeps_hscv3p1_api_37_18.png" />
 <img alt="../../../../_images/sweeps_hscv3p1_api_37_19.png" src="../../../../_images/sweeps_hscv3p1_api_37_19.png" />
+<img alt="../../../../_images/sweeps_hscv3p1_api_37_20.png" src="../../../../_images/sweeps_hscv3p1_api_37_20.png" />
+<img alt="../../../../_images/sweeps_hscv3p1_api_37_21.png" src="../../../../_images/sweeps_hscv3p1_api_37_21.png" />
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="science-applications-a-class-anchor-id-sciap-a">
+<h1>Science Applications <a class="anchor" id="sciap"></a><a class="headerlink" href="#science-applications-a-class-anchor-id-sciap-a" title="Permalink to this headline">#</a></h1>
+<section id="high-proper-motion-objects-a-class-anchor-id-hpm-a">
+<h2>High Proper Motion Objects  <a class="anchor" id="hpm"></a><a class="headerlink" href="#high-proper-motion-objects-a-class-anchor-id-hpm-a" title="Permalink to this headline">#</a></h2>
+<p>Get a list of objects with high, accurately measured proper motions.
+Proper motions are measured relative to the Galactic center.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lpm_sgra</span> <span class="o">=</span> <span class="o">-</span><span class="mf">6.379</span> <span class="c1"># +- 0.026</span>
+<span class="n">bpm_sgra</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.202</span> <span class="c1"># +- 0.019</span>
+
+<span class="n">lpm0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">tab</span><span class="p">[</span><span class="s1">&#39;lpm&#39;</span><span class="p">])</span>
+<span class="n">bpm0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">tab</span><span class="p">[</span><span class="s1">&#39;bpm&#39;</span><span class="p">])</span>
+<span class="n">lpmerr0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">tab</span><span class="p">[</span><span class="s1">&#39;lpmerr&#39;</span><span class="p">])</span>
+<span class="n">bpmerr0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">tab</span><span class="p">[</span><span class="s1">&#39;bpmerr&#39;</span><span class="p">])</span>
+<span class="n">pmtot0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">bpm0</span><span class="o">-</span><span class="n">bpm_sgra</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="p">(</span><span class="n">lpm0</span><span class="o">-</span><span class="n">lpm_sgra</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">pmerr0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">bpmerr0</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">lpmerr0</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">dev</span> <span class="o">=</span> <span class="n">tab</span><span class="p">[</span><span class="s1">&#39;pmdev&#39;</span><span class="p">]</span>
+
+<span class="c1"># sort samples by decreasing PM</span>
+<span class="n">wpmh</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">pmtot0</span> <span class="o">&gt;</span> <span class="mi">15</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">pmerr0</span> <span class="o">&lt;</span> <span class="mf">1.0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">dev</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">wpmh</span> <span class="o">=</span> <span class="n">wpmh</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="o">-</span><span class="n">pmtot0</span><span class="p">[</span><span class="n">wpmh</span><span class="p">])]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Plotting </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">wpmh</span><span class="p">)</span><span class="si">}</span><span class="s2"> objects&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="n">tab</span><span class="p">[</span><span class="s2">&quot;ObjID&quot;</span><span class="p">][</span><span class="n">wpmh</span><span class="p">]:</span>
+    <span class="n">positions</span><span class="p">(</span><span class="n">o</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Plotting 31 objects
+</pre></div>
+</div>
+<img alt="../../../../_images/sweeps_hscv3p1_api_40_1.png" src="../../../../_images/sweeps_hscv3p1_api_40_1.png" />
+<img alt="../../../../_images/sweeps_hscv3p1_api_40_2.png" src="../../../../_images/sweeps_hscv3p1_api_40_2.png" />
+<img alt="../../../../_images/sweeps_hscv3p1_api_40_3.png" src="../../../../_images/sweeps_hscv3p1_api_40_3.png" />
+<img alt="../../../../_images/sweeps_hscv3p1_api_40_4.png" src="../../../../_images/sweeps_hscv3p1_api_40_4.png" />
+<img alt="../../../../_images/sweeps_hscv3p1_api_40_5.png" src="../../../../_images/sweeps_hscv3p1_api_40_5.png" />
+<img alt="../../../../_images/sweeps_hscv3p1_api_40_6.png" src="../../../../_images/sweeps_hscv3p1_api_40_6.png" />
+<img alt="../../../../_images/sweeps_hscv3p1_api_40_7.png" src="../../../../_images/sweeps_hscv3p1_api_40_7.png" />
+<img alt="../../../../_images/sweeps_hscv3p1_api_40_8.png" src="../../../../_images/sweeps_hscv3p1_api_40_8.png" />
+<img alt="../../../../_images/sweeps_hscv3p1_api_40_9.png" src="../../../../_images/sweeps_hscv3p1_api_40_9.png" />
+<img alt="../../../../_images/sweeps_hscv3p1_api_40_10.png" src="../../../../_images/sweeps_hscv3p1_api_40_10.png" />
+<img alt="../../../../_images/sweeps_hscv3p1_api_40_11.png" src="../../../../_images/sweeps_hscv3p1_api_40_11.png" />
+<img alt="../../../../_images/sweeps_hscv3p1_api_40_12.png" src="../../../../_images/sweeps_hscv3p1_api_40_12.png" />
+<img alt="../../../../_images/sweeps_hscv3p1_api_40_13.png" src="../../../../_images/sweeps_hscv3p1_api_40_13.png" />
+<img alt="../../../../_images/sweeps_hscv3p1_api_40_14.png" src="../../../../_images/sweeps_hscv3p1_api_40_14.png" />
+<img alt="../../../../_images/sweeps_hscv3p1_api_40_15.png" src="../../../../_images/sweeps_hscv3p1_api_40_15.png" />
+<img alt="../../../../_images/sweeps_hscv3p1_api_40_16.png" src="../../../../_images/sweeps_hscv3p1_api_40_16.png" />
+<img alt="../../../../_images/sweeps_hscv3p1_api_40_17.png" src="../../../../_images/sweeps_hscv3p1_api_40_17.png" />
+<img alt="../../../../_images/sweeps_hscv3p1_api_40_18.png" src="../../../../_images/sweeps_hscv3p1_api_40_18.png" />
+<img alt="../../../../_images/sweeps_hscv3p1_api_40_19.png" src="../../../../_images/sweeps_hscv3p1_api_40_19.png" />
+<img alt="../../../../_images/sweeps_hscv3p1_api_40_20.png" src="../../../../_images/sweeps_hscv3p1_api_40_20.png" />
+<img alt="../../../../_images/sweeps_hscv3p1_api_40_21.png" src="../../../../_images/sweeps_hscv3p1_api_40_21.png" />
+<img alt="../../../../_images/sweeps_hscv3p1_api_40_22.png" src="../../../../_images/sweeps_hscv3p1_api_40_22.png" />
+<img alt="../../../../_images/sweeps_hscv3p1_api_40_23.png" src="../../../../_images/sweeps_hscv3p1_api_40_23.png" />
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">18</span><span class="p">],</span> <span class="n">line</span> <span class="mi">9</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Plotting </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">wi</span><span class="p">)</span><span class="si">}</span><span class="s2"> objects&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="n">objid</span><span class="p">[</span><span class="n">wi</span><span class="p">]:</span>
-<span class="ne">----&gt; </span><span class="mi">9</span>     <span class="n">positions</span><span class="p">(</span><span class="n">o</span><span class="p">)</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">19</span><span class="p">],</span> <span class="n">line</span> <span class="mi">18</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Plotting </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">wpmh</span><span class="p">)</span><span class="si">}</span><span class="s2"> objects&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="n">tab</span><span class="p">[</span><span class="s2">&quot;ObjID&quot;</span><span class="p">][</span><span class="n">wpmh</span><span class="p">]:</span>
+<span class="ne">---&gt; </span><span class="mi">18</span>     <span class="n">positions</span><span class="p">(</span><span class="n">o</span><span class="p">)</span>
 
 <span class="nn">Cell In[17], line 15,</span> in <span class="ni">positions</span><span class="nt">(Obj)</span>
 <span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="n">pos</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="s1">&#39;dT&#39;</span><span class="p">)</span>
@@ -1970,38 +2033,6 @@ These constraints can be modified depending on your science goals.</p>
 <span class="g g-Whitespace">   </span><span class="mi">1344</span>     <span class="bp">self</span><span class="o">.</span><span class="n">settimeout</span><span class="p">(</span><span class="n">timeout</span><span class="p">)</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="science-applications-a-class-anchor-id-sciap-a">
-<h1>Science Applications <a class="anchor" id="sciap"></a><a class="headerlink" href="#science-applications-a-class-anchor-id-sciap-a" title="Permalink to this headline">#</a></h1>
-<section id="high-proper-motion-objects-a-class-anchor-id-hpm-a">
-<h2>High Proper Motion Objects  <a class="anchor" id="hpm"></a><a class="headerlink" href="#high-proper-motion-objects-a-class-anchor-id-hpm-a" title="Permalink to this headline">#</a></h2>
-<p>Get a list of objects with high, accurately measured proper motions.
-Proper motions are measured relative to the Galactic center.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lpm_sgra</span> <span class="o">=</span> <span class="o">-</span><span class="mf">6.379</span> <span class="c1"># +- 0.026</span>
-<span class="n">bpm_sgra</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.202</span> <span class="c1"># +- 0.019</span>
-
-<span class="n">lpm0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">tab</span><span class="p">[</span><span class="s1">&#39;lpm&#39;</span><span class="p">])</span>
-<span class="n">bpm0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">tab</span><span class="p">[</span><span class="s1">&#39;bpm&#39;</span><span class="p">])</span>
-<span class="n">lpmerr0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">tab</span><span class="p">[</span><span class="s1">&#39;lpmerr&#39;</span><span class="p">])</span>
-<span class="n">bpmerr0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">tab</span><span class="p">[</span><span class="s1">&#39;bpmerr&#39;</span><span class="p">])</span>
-<span class="n">pmtot0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">bpm0</span><span class="o">-</span><span class="n">bpm_sgra</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="p">(</span><span class="n">lpm0</span><span class="o">-</span><span class="n">lpm_sgra</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">pmerr0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">bpmerr0</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">lpmerr0</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">dev</span> <span class="o">=</span> <span class="n">tab</span><span class="p">[</span><span class="s1">&#39;pmdev&#39;</span><span class="p">]</span>
-
-<span class="c1"># sort samples by decreasing PM</span>
-<span class="n">wpmh</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">pmtot0</span> <span class="o">&gt;</span> <span class="mi">15</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">pmerr0</span> <span class="o">&lt;</span> <span class="mf">1.0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">dev</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">wpmh</span> <span class="o">=</span> <span class="n">wpmh</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="o">-</span><span class="n">pmtot0</span><span class="p">[</span><span class="n">wpmh</span><span class="p">])]</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Plotting </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">wpmh</span><span class="p">)</span><span class="si">}</span><span class="s2"> objects&quot;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="n">tab</span><span class="p">[</span><span class="s2">&quot;ObjID&quot;</span><span class="p">][</span><span class="n">wpmh</span><span class="p">]:</span>
-    <span class="n">positions</span><span class="p">(</span><span class="n">o</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

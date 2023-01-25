@@ -27,6 +27,7 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/main.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/table.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -1275,7 +1276,7 @@ title="Print to PDF"
 </pre></div>
 </div>
 <div class="output text_html"><div><i>Table length=19</i>
-<table id="table140469912829712" class="table-striped table-bordered table-condensed">
+<table id="table139806475418496" class="table-striped table-bordered table-condensed">
 <thead><tr><th>name</th><th>type</th><th>description</th></tr></thead>
 <thead><tr><th>str16</th><th>str5</th><th>str163</th></tr></thead>
 <tr><td>MatchID</td><td>long</td><td>identifier for the match</td></tr>
@@ -1357,34 +1358,34 @@ dec: 2.13333
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>https://catalogs.mast.stsci.edu/api/v0.1/hsc/v3/summary/magaper2.csv?A_F475W_N.gte=10&amp;A_F814W_N.gte=10&amp;ra=16.22583&amp;dec=2.13333&amp;radius=0.5&amp;columns=%5BMatchID%2CMatchRA%2CMatchDec%2CNumFilters%2CNumVisits%2CNumImages%2CStartMJD%2CStopMJD%2CA_F475W%2CA_F475W_N%2CA_F475W_MAD%2CA_F814W%2CA_F814W_N%2CA_F814W_MAD%5D
-9.3 s: retrieved data and converted to 18666-row astropy table
+5.6 s: retrieved data and converted to 18666-row astropy table
 </pre></div>
 </div>
 <div class="output text_html"><div><i>Table length=18666</i>
-<table id="table140469912767120" class="table-striped table-bordered table-condensed">
+<table id="table139806475372528" class="table-striped table-bordered table-condensed">
 <thead><tr><th>MatchID</th><th>MatchRA</th><th>MatchDec</th><th>NumFilters</th><th>NumVisits</th><th>NumImages</th><th>StartMJD</th><th>StopMJD</th><th>A_F475W</th><th>A_F475W_N</th><th>A_F475W_MAD</th><th>A_F814W</th><th>A_F814W_N</th><th>A_F814W_MAD</th></tr></thead>
 <thead><tr><th>int64</th><th>float64</th><th>float64</th><th>int64</th><th>int64</th><th>int64</th><th>float64</th><th>float64</th><th>float64</th><th>int64</th><th>float64</th><th>float64</th><th>int64</th><th>float64</th></tr></thead>
-<tr><td>18531432</td><td>16.138911</td><td>2.142344</td><td>3</td><td>14</td><td>26</td><td>53965.29153</td><td>57009.86262</td><td>25.365</td><td>12</td><td>0.022</td><td>24.594</td><td>12</td><td>0.018</td></tr>
-<tr><td>18957141</td><td>16.132487</td><td>2.167765</td><td>2</td><td>12</td><td>24</td><td>53965.29153</td><td>53967.71941</td><td>25.757</td><td>12</td><td>0.018</td><td>25.243</td><td>12</td><td>0.029</td></tr>
-<tr><td>18538523</td><td>16.138318</td><td>2.138948</td><td>3</td><td>14</td><td>26</td><td>53965.29153</td><td>57009.86262</td><td>25.937</td><td>12</td><td>0.019</td><td>25.052</td><td>12</td><td>0.011</td></tr>
-<tr><td>18541608</td><td>16.115017</td><td>2.129192</td><td>2</td><td>12</td><td>24</td><td>53965.29153</td><td>53967.71941</td><td>25.292</td><td>12</td><td>0.013</td><td>24.542</td><td>12</td><td>0.012</td></tr>
-<tr><td>18681216</td><td>16.127232</td><td>2.138580</td><td>3</td><td>13</td><td>23</td><td>53965.29153</td><td>57009.86262</td><td>26.796</td><td>10</td><td>0.044</td><td>25.909</td><td>12</td><td>0.034</td></tr>
-<tr><td>18476346</td><td>16.109828</td><td>2.173525</td><td>3</td><td>14</td><td>26</td><td>53965.29153</td><td>57009.86262</td><td>25.393</td><td>12</td><td>0.019</td><td>24.766</td><td>12</td><td>0.030</td></tr>
-<tr><td>18522396</td><td>16.098383</td><td>2.166358</td><td>2</td><td>12</td><td>24</td><td>53965.29153</td><td>53967.71941</td><td>25.192</td><td>12</td><td>0.014</td><td>25.789</td><td>12</td><td>0.042</td></tr>
-<tr><td>18526652</td><td>16.092265</td><td>2.167754</td><td>2</td><td>12</td><td>24</td><td>53965.29153</td><td>53967.71941</td><td>26.005</td><td>12</td><td>0.032</td><td>26.432</td><td>12</td><td>0.088</td></tr>
-<tr><td>18676062</td><td>16.108400</td><td>2.158665</td><td>2</td><td>12</td><td>24</td><td>53965.29153</td><td>53967.71941</td><td>26.811</td><td>12</td><td>0.065</td><td>26.219</td><td>12</td><td>0.069</td></tr>
-<tr><td>608860</td><td>16.132666</td><td>2.185002</td><td>2</td><td>12</td><td>24</td><td>53965.29153</td><td>53967.71941</td><td>26.611</td><td>12</td><td>0.065</td><td>25.756</td><td>12</td><td>0.023</td></tr>
+<tr><td>15295599</td><td>16.116573</td><td>2.182208</td><td>3</td><td>14</td><td>26</td><td>53965.29153</td><td>57009.86262</td><td>24.211</td><td>12</td><td>0.017</td><td>24.965</td><td>12</td><td>0.032</td></tr>
+<tr><td>15110713</td><td>16.091393</td><td>2.164393</td><td>2</td><td>12</td><td>24</td><td>53965.29153</td><td>53967.71941</td><td>25.353</td><td>12</td><td>0.016</td><td>25.891</td><td>12</td><td>0.064</td></tr>
+<tr><td>15097639</td><td>16.102292</td><td>2.177228</td><td>2</td><td>12</td><td>23</td><td>53965.29153</td><td>53967.71941</td><td>26.198</td><td>12</td><td>0.031</td><td>26.738</td><td>11</td><td>0.075</td></tr>
+<tr><td>15101151</td><td>16.117626</td><td>2.162749</td><td>3</td><td>14</td><td>26</td><td>53965.29153</td><td>57009.86262</td><td>25.166</td><td>12</td><td>0.012</td><td>24.435</td><td>12</td><td>0.018</td></tr>
+<tr><td>15238678</td><td>16.136564</td><td>2.147503</td><td>3</td><td>14</td><td>26</td><td>53965.29153</td><td>57009.86262</td><td>26.747</td><td>12</td><td>0.052</td><td>26.023</td><td>12</td><td>0.044</td></tr>
+<tr><td>15087799</td><td>16.117920</td><td>2.145830</td><td>3</td><td>14</td><td>26</td><td>53965.29153</td><td>57009.86262</td><td>23.662</td><td>12</td><td>0.007</td><td>22.314</td><td>12</td><td>0.007</td></tr>
+<tr><td>15089991</td><td>16.146867</td><td>2.146431</td><td>2</td><td>10</td><td>20</td><td>53965.29153</td><td>53967.71941</td><td>25.842</td><td>10</td><td>0.038</td><td>25.036</td><td>10</td><td>0.019</td></tr>
+<tr><td>15091147</td><td>16.114063</td><td>2.128873</td><td>2</td><td>12</td><td>23</td><td>53965.29153</td><td>53967.70404</td><td>26.448</td><td>12</td><td>0.075</td><td>26.252</td><td>11</td><td>0.030</td></tr>
+<tr><td>15092360</td><td>16.132175</td><td>2.152250</td><td>3</td><td>14</td><td>26</td><td>53965.29153</td><td>57009.86262</td><td>24.743</td><td>12</td><td>0.018</td><td>23.684</td><td>12</td><td>0.016</td></tr>
+<tr><td>15093724</td><td>16.093817</td><td>2.169454</td><td>3</td><td>14</td><td>26</td><td>53965.29153</td><td>57009.86262</td><td>24.253</td><td>12</td><td>0.014</td><td>23.647</td><td>12</td><td>0.009</td></tr>
 <tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr>
-<tr><td>91278067</td><td>16.111429</td><td>2.167153</td><td>2</td><td>12</td><td>23</td><td>53965.29153</td><td>53967.71941</td><td>26.810</td><td>11</td><td>0.061</td><td>26.450</td><td>12</td><td>0.051</td></tr>
-<tr><td>91280225</td><td>16.101758</td><td>2.155636</td><td>3</td><td>14</td><td>26</td><td>53965.29153</td><td>57009.86262</td><td>25.951</td><td>12</td><td>0.033</td><td>25.247</td><td>12</td><td>0.018</td></tr>
-<tr><td>91288545</td><td>16.111267</td><td>2.140486</td><td>3</td><td>14</td><td>26</td><td>53965.29153</td><td>57009.86262</td><td>24.859</td><td>12</td><td>0.010</td><td>24.376</td><td>12</td><td>0.043</td></tr>
-<tr><td>91429105</td><td>16.127817</td><td>2.162864</td><td>3</td><td>14</td><td>26</td><td>53965.29153</td><td>57009.86262</td><td>25.478</td><td>12</td><td>0.026</td><td>24.660</td><td>12</td><td>0.019</td></tr>
-<tr><td>91276854</td><td>16.125367</td><td>2.181186</td><td>3</td><td>14</td><td>26</td><td>53965.29153</td><td>57009.86262</td><td>26.406</td><td>12</td><td>0.043</td><td>25.575</td><td>12</td><td>0.023</td></tr>
-<tr><td>91400224</td><td>16.094329</td><td>2.139921</td><td>2</td><td>12</td><td>24</td><td>53965.29153</td><td>53967.71941</td><td>26.707</td><td>12</td><td>0.028</td><td>26.045</td><td>12</td><td>0.055</td></tr>
-<tr><td>91404833</td><td>16.093455</td><td>2.143230</td><td>2</td><td>12</td><td>24</td><td>53965.29153</td><td>53967.71941</td><td>25.888</td><td>12</td><td>0.023</td><td>26.188</td><td>12</td><td>0.043</td></tr>
-<tr><td>91386911</td><td>16.087985</td><td>2.161153</td><td>2</td><td>12</td><td>24</td><td>53965.29153</td><td>53967.71941</td><td>24.451</td><td>12</td><td>0.028</td><td>24.237</td><td>12</td><td>0.027</td></tr>
-<tr><td>91358604</td><td>16.094160</td><td>2.166333</td><td>3</td><td>14</td><td>26</td><td>53965.29153</td><td>57009.86262</td><td>25.408</td><td>12</td><td>0.026</td><td>24.752</td><td>12</td><td>0.014</td></tr>
-<tr><td>91363176</td><td>16.120438</td><td>2.144609</td><td>3</td><td>14</td><td>26</td><td>53965.29153</td><td>57009.86262</td><td>26.126</td><td>12</td><td>0.038</td><td>25.377</td><td>12</td><td>0.032</td></tr>
+<tr><td>91095397</td><td>16.105554</td><td>2.175162</td><td>2</td><td>12</td><td>24</td><td>53965.29153</td><td>53967.71941</td><td>25.214</td><td>12</td><td>0.020</td><td>25.939</td><td>12</td><td>0.060</td></tr>
+<tr><td>91107787</td><td>16.100872</td><td>2.165938</td><td>2</td><td>12</td><td>24</td><td>53965.29153</td><td>53967.71941</td><td>26.343</td><td>12</td><td>0.032</td><td>25.597</td><td>12</td><td>0.029</td></tr>
+<tr><td>91109937</td><td>16.127819</td><td>2.164814</td><td>2</td><td>12</td><td>24</td><td>53965.29153</td><td>53967.71941</td><td>25.851</td><td>12</td><td>0.034</td><td>24.957</td><td>12</td><td>0.020</td></tr>
+<tr><td>92370559</td><td>16.137380</td><td>2.174611</td><td>2</td><td>12</td><td>22</td><td>53965.29153</td><td>53967.71941</td><td>26.233</td><td>12</td><td>0.030</td><td>26.654</td><td>10</td><td>0.067</td></tr>
+<tr><td>92376591</td><td>16.123522</td><td>2.170269</td><td>3</td><td>14</td><td>26</td><td>53965.29153</td><td>57009.86262</td><td>25.207</td><td>12</td><td>0.038</td><td>24.292</td><td>12</td><td>0.014</td></tr>
+<tr><td>92212951</td><td>16.137305</td><td>2.159579</td><td>3</td><td>14</td><td>26</td><td>53965.29153</td><td>57009.86262</td><td>24.803</td><td>12</td><td>0.011</td><td>24.103</td><td>12</td><td>0.019</td></tr>
+<tr><td>92216532</td><td>16.140556</td><td>2.166147</td><td>2</td><td>12</td><td>24</td><td>53965.29153</td><td>53967.71941</td><td>25.400</td><td>12</td><td>0.027</td><td>24.473</td><td>12</td><td>0.009</td></tr>
+<tr><td>92217125</td><td>16.135454</td><td>2.145031</td><td>3</td><td>14</td><td>26</td><td>53965.29153</td><td>57009.86262</td><td>25.396</td><td>12</td><td>0.022</td><td>24.623</td><td>12</td><td>0.012</td></tr>
+<tr><td>91302251</td><td>16.113461</td><td>2.148448</td><td>3</td><td>14</td><td>26</td><td>53965.29153</td><td>57009.86262</td><td>25.229</td><td>12</td><td>0.026</td><td>24.336</td><td>12</td><td>0.019</td></tr>
+<tr><td>91303344</td><td>16.112564</td><td>2.132989</td><td>2</td><td>12</td><td>24</td><td>53965.29153</td><td>53967.71941</td><td>25.471</td><td>12</td><td>0.022</td><td>26.053</td><td>12</td><td>0.040</td></tr>
 </table></div></div></div>
 </div>
 </section>
@@ -1470,7 +1471,7 @@ dec: 2.13333
 </pre></div>
 </div>
 <div class="output text_html"><div><i>Table length=29</i>
-<table id="table140469859138384" class="table-striped table-bordered table-condensed">
+<table id="table139806421648336" class="table-striped table-bordered table-condensed">
 <thead><tr><th>MatchID</th><th>MatchRA</th><th>MatchDec</th><th>NumFilters</th><th>NumVisits</th><th>NumImages</th><th>StartMJD</th><th>StopMJD</th><th>A_F475W</th><th>A_F475W_N</th><th>A_F475W_MAD</th><th>A_F814W</th><th>A_F814W_N</th><th>A_F814W_MAD</th></tr></thead>
 <thead><tr><th>int64</th><th>float64</th><th>float64</th><th>int64</th><th>int64</th><th>int64</th><th>float64</th><th>float64</th><th>float64</th><th>int64</th><th>float64</th><th>float64</th><th>int64</th><th>float64</th></tr></thead>
 <tr><td>80189155</td><td>16.140740</td><td>2.155288</td><td>3</td><td>14</td><td>26</td><td>53965.29153</td><td>57009.86262</td><td>22.451</td><td>12</td><td>0.294</td><td>22.001</td><td>12</td><td>0.198</td></tr>
@@ -1548,7 +1549,7 @@ dec: 2.13333
 </pre></div>
 </div>
 <div class="output text_html"><div><i>Table length=12</i>
-<table id="table140469859233904" class="table-striped table-bordered table-condensed">
+<table id="table139806421756864" class="table-striped table-bordered table-condensed">
 <thead><tr><th>MatchID</th><th>SourceID</th><th>StartMJD</th><th>Detector</th><th>Filter</th><th>MagAper2</th><th>Flags</th><th>ImageName</th></tr></thead>
 <thead><tr><th>int64</th><th>int64</th><th>float64</th><th>str7</th><th>str5</th><th>float64</th><th>int64</th><th>str26</th></tr></thead>
 <tr><td>80189155</td><td>4000999062305</td><td>53965.29153</td><td>ACS/WFC</td><td>F475W</td><td>22.192</td><td>0</td><td>hst_10505_07_acs_wfc_f475w</td></tr>
@@ -1583,7 +1584,7 @@ dec: 2.13333
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fc1b00fa380&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f27381b15d0&gt;
 </pre></div>
 </div>
 <img alt="../../../../_images/hscv3_api_28_1.png" src="../../../../_images/hscv3_api_28_1.png" />
