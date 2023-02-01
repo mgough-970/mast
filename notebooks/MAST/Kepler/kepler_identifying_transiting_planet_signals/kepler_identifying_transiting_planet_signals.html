@@ -921,23 +921,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>No data found for target &quot;Kepler-69&quot;.
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda/lib/python3.10/site-packages/lightkurve/search.py:475: LightkurveWarning: Cannot download from an empty search result.
-  warnings.warn(
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># Download all available Kepler light curves</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">lc_collection</span> <span class="o">=</span> <span class="n">search_result</span><span class="o">.</span><span class="n">download_all</span><span class="p">()</span>
-<span class="ne">----&gt; </span><span class="mi">5</span> <span class="n">lc_collection</span><span class="o">.</span><span class="n">plot</span><span class="p">();</span>
-
-<span class="ne">AttributeError</span>: &#39;NoneType&#39; object has no attribute &#39;plot&#39;
-</pre></div>
-</div>
+<img alt="../../../../_images/kepler_identifying_transiting_planet_signals_8_0.png" src="../../../../_images/kepler_identifying_transiting_planet_signals_8_0.png" />
 </div>
 </div>
 <p>Each observation has a different offset, so in order to successfully search this light curve for transits, we first need to normalize and flatten the full observation. This can be performed on a stitched light curve. For more information about combining multiple observations of the same target, please see the companion tutorial on combining multiple quarters of <em>Kepler</em> data with Lightkurve.</p>
@@ -947,12 +931,110 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html">SearchResult containing 17 data products.
+
+<table id="table140137853111600">
+<thead><tr><th>#</th><th>mission</th><th>year</th><th>author</th><th>exptime</th><th>target_name</th><th>distance</th></tr></thead>
+<thead><tr><th></th><th></th><th></th><th></th><th>s</th><th></th><th>arcsec</th></tr></thead>
+<tr><td>0</td><td>Kepler Quarter 01</td><td>2009</td><td><a href='https://archive.stsci.edu/kepler/data_products.html'>Kepler</a></td><td>1800</td><td>kplr008692861</td><td>0.0</td></tr>
+<tr><td>1</td><td>Kepler Quarter 02</td><td>2009</td><td><a href='https://archive.stsci.edu/kepler/data_products.html'>Kepler</a></td><td>1800</td><td>kplr008692861</td><td>0.0</td></tr>
+<tr><td>2</td><td>Kepler Quarter 03</td><td>2009</td><td><a href='https://archive.stsci.edu/kepler/data_products.html'>Kepler</a></td><td>1800</td><td>kplr008692861</td><td>0.0</td></tr>
+<tr><td>3</td><td>Kepler Quarter 04</td><td>2010</td><td><a href='https://archive.stsci.edu/kepler/data_products.html'>Kepler</a></td><td>1800</td><td>kplr008692861</td><td>0.0</td></tr>
+<tr><td>4</td><td>Kepler Quarter 05</td><td>2010</td><td><a href='https://archive.stsci.edu/kepler/data_products.html'>Kepler</a></td><td>1800</td><td>kplr008692861</td><td>0.0</td></tr>
+<tr><td>5</td><td>Kepler Quarter 06</td><td>2010</td><td><a href='https://archive.stsci.edu/kepler/data_products.html'>Kepler</a></td><td>1800</td><td>kplr008692861</td><td>0.0</td></tr>
+<tr><td>6</td><td>Kepler Quarter 07</td><td>2010</td><td><a href='https://archive.stsci.edu/kepler/data_products.html'>Kepler</a></td><td>1800</td><td>kplr008692861</td><td>0.0</td></tr>
+<tr><td>7</td><td>Kepler Quarter 08</td><td>2011</td><td><a href='https://archive.stsci.edu/kepler/data_products.html'>Kepler</a></td><td>1800</td><td>kplr008692861</td><td>0.0</td></tr>
+<tr><td>8</td><td>Kepler Quarter 09</td><td>2011</td><td><a href='https://archive.stsci.edu/kepler/data_products.html'>Kepler</a></td><td>1800</td><td>kplr008692861</td><td>0.0</td></tr>
+<tr><td>9</td><td>Kepler Quarter 10</td><td>2011</td><td><a href='https://archive.stsci.edu/kepler/data_products.html'>Kepler</a></td><td>1800</td><td>kplr008692861</td><td>0.0</td></tr>
+<tr><td>10</td><td>Kepler Quarter 11</td><td>2012</td><td><a href='https://archive.stsci.edu/kepler/data_products.html'>Kepler</a></td><td>1800</td><td>kplr008692861</td><td>0.0</td></tr>
+<tr><td>11</td><td>Kepler Quarter 12</td><td>2012</td><td><a href='https://archive.stsci.edu/kepler/data_products.html'>Kepler</a></td><td>1800</td><td>kplr008692861</td><td>0.0</td></tr>
+<tr><td>12</td><td>Kepler Quarter 13</td><td>2012</td><td><a href='https://archive.stsci.edu/kepler/data_products.html'>Kepler</a></td><td>1800</td><td>kplr008692861</td><td>0.0</td></tr>
+<tr><td>13</td><td>Kepler Quarter 14</td><td>2012</td><td><a href='https://archive.stsci.edu/kepler/data_products.html'>Kepler</a></td><td>1800</td><td>kplr008692861</td><td>0.0</td></tr>
+<tr><td>14</td><td>Kepler Quarter 15</td><td>2013</td><td><a href='https://archive.stsci.edu/kepler/data_products.html'>Kepler</a></td><td>1800</td><td>kplr008692861</td><td>0.0</td></tr>
+<tr><td>15</td><td>Kepler Quarter 16</td><td>2013</td><td><a href='https://archive.stsci.edu/kepler/data_products.html'>Kepler</a></td><td>1800</td><td>kplr008692861</td><td>0.0</td></tr>
+<tr><td>16</td><td>Kepler Quarter 17</td><td>2013</td><td><a href='https://archive.stsci.edu/kepler/data_products.html'>Kepler</a></td><td>1800</td><td>kplr008692861</td><td>0.0</td></tr>
+</table></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Flatten the light curve </span>
 <span class="n">lc</span> <span class="o">=</span> <span class="n">lc_collection</span><span class="o">.</span><span class="n">stitch</span><span class="p">()</span><span class="o">.</span><span class="n">flatten</span><span class="p">(</span><span class="n">window_length</span><span class="o">=</span><span class="mi">901</span><span class="p">)</span><span class="o">.</span><span class="n">remove_outliers</span><span class="p">()</span>
 <span class="n">lc</span><span class="o">.</span><span class="n">plot</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Flatten the light curve </span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">lc</span> <span class="o">=</span> <span class="n">lc_collection</span><span class="o">.</span><span class="n">stitch</span><span class="p">()</span><span class="o">.</span><span class="n">flatten</span><span class="p">(</span><span class="n">window_length</span><span class="o">=</span><span class="mi">901</span><span class="p">)</span><span class="o">.</span><span class="n">remove_outliers</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">lc</span><span class="o">.</span><span class="n">plot</span><span class="p">();</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.10/site-packages/lightkurve/lightcurve.py:1381,</span> in <span class="ni">LightCurve.remove_outliers</span><span class="nt">(self, sigma, sigma_lower, sigma_upper, return_mask, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1379</span> <span class="k">with</span> <span class="n">warnings</span><span class="o">.</span><span class="n">catch_warnings</span><span class="p">():</span>  <span class="c1"># Ignore warnings due to NaNs or Infs</span>
+<span class="g g-Whitespace">   </span><span class="mi">1380</span>     <span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1381</span>     <span class="n">outlier_mask</span> <span class="o">=</span> <span class="n">sigma_clip</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1382</span>         <span class="n">data</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">flux</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1383</span>         <span class="n">sigma</span><span class="o">=</span><span class="n">sigma</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1384</span>         <span class="n">sigma_lower</span><span class="o">=</span><span class="n">sigma_lower</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1385</span>         <span class="n">sigma_upper</span><span class="o">=</span><span class="n">sigma_upper</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1386</span>         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1387</span>     <span class="p">)</span><span class="o">.</span><span class="n">mask</span>
+<span class="g g-Whitespace">   </span><span class="mi">1388</span> <span class="c1"># Second, we return the masked light curve and optionally the mask itself</span>
+<span class="g g-Whitespace">   </span><span class="mi">1389</span> <span class="k">if</span> <span class="n">return_mask</span><span class="p">:</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.10/site-packages/astropy/stats/sigma_clipping.py:890,</span> in <span class="ni">sigma_clip</span><span class="nt">(data, sigma, sigma_lower, sigma_upper, maxiters, cenfunc, stdfunc, axis, masked, return_bounds, copy, grow)</span>
+<span class="g g-Whitespace">    </span><span class="mi">699</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">700</span><span class="sd"> Perform sigma-clipping on the provided data.</span>
+<span class="g g-Whitespace">    </span><span class="mi">701</span><span class="sd"> </span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">    </span><span class="mi">878</span><span class="sd"> standard deviation is higher.</span>
+<span class="g g-Whitespace">    </span><span class="mi">879</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">880</span> <span class="n">sigclip</span> <span class="o">=</span> <span class="n">SigmaClip</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">881</span>     <span class="n">sigma</span><span class="o">=</span><span class="n">sigma</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">882</span>     <span class="n">sigma_lower</span><span class="o">=</span><span class="n">sigma_lower</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">887</span>     <span class="n">grow</span><span class="o">=</span><span class="n">grow</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">888</span> <span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">890</span> <span class="k">return</span> <span class="n">sigclip</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">891</span>     <span class="n">data</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span> <span class="n">masked</span><span class="o">=</span><span class="n">masked</span><span class="p">,</span> <span class="n">return_bounds</span><span class="o">=</span><span class="n">return_bounds</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="n">copy</span>
+<span class="g g-Whitespace">    </span><span class="mi">892</span> <span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.10/site-packages/astropy/stats/sigma_clipping.py:676,</span> in <span class="ni">SigmaClip.__call__</span><span class="nt">(self, data, axis, masked, return_bounds, copy)</span>
+<span class="g g-Whitespace">    </span><span class="mi">671</span> <span class="c1"># These two cases are treated separately because when</span>
+<span class="g g-Whitespace">    </span><span class="mi">672</span> <span class="c1"># ``axis=None`` we can simply remove clipped values from the</span>
+<span class="g g-Whitespace">    </span><span class="mi">673</span> <span class="c1"># array. This is not possible when ``axis`` or ``grow`` is</span>
+<span class="g g-Whitespace">    </span><span class="mi">674</span> <span class="c1"># specified.</span>
+<span class="g g-Whitespace">    </span><span class="mi">675</span> <span class="k">if</span> <span class="n">axis</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">grow</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">676</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sigmaclip_noaxis</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">677</span>         <span class="n">data</span><span class="p">,</span> <span class="n">masked</span><span class="o">=</span><span class="n">masked</span><span class="p">,</span> <span class="n">return_bounds</span><span class="o">=</span><span class="n">return_bounds</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="n">copy</span>
+<span class="g g-Whitespace">    </span><span class="mi">678</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">679</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">680</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sigmaclip_withaxis</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">681</span>         <span class="n">data</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span> <span class="n">masked</span><span class="o">=</span><span class="n">masked</span><span class="p">,</span> <span class="n">return_bounds</span><span class="o">=</span><span class="n">return_bounds</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="n">copy</span>
+<span class="g g-Whitespace">    </span><span class="mi">682</span>     <span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.10/site-packages/astropy/stats/sigma_clipping.py:463,</span> in <span class="ni">SigmaClip._sigmaclip_noaxis</span><span class="nt">(self, data, masked, return_bounds, copy)</span>
+<span class="g g-Whitespace">    </span><span class="mi">460</span>     <span class="c1"># update the mask in place, ignoring RuntimeWarnings for</span>
+<span class="g g-Whitespace">    </span><span class="mi">461</span>     <span class="c1"># comparisons with NaN data values</span>
+<span class="g g-Whitespace">    </span><span class="mi">462</span>     <span class="k">with</span> <span class="n">np</span><span class="o">.</span><span class="n">errstate</span><span class="p">(</span><span class="n">invalid</span><span class="o">=</span><span class="s2">&quot;ignore&quot;</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">463</span>         <span class="n">filtered_data</span><span class="o">.</span><span class="n">mask</span> <span class="o">|=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_or</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">464</span>             <span class="n">data</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">_min_value</span><span class="p">,</span> <span class="n">data</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">_max_value</span>
+<span class="g g-Whitespace">    </span><span class="mi">465</span>         <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">467</span> <span class="k">if</span> <span class="n">return_bounds</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">468</span>     <span class="k">return</span> <span class="n">filtered_data</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_min_value</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_max_value</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.10/site-packages/astropy/utils/masked/core.py:700,</span> in <span class="ni">MaskedNDArray.__array_ufunc__</span><span class="nt">(self, ufunc, method, *inputs, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">697</span> <span class="k">if</span> <span class="n">m</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">698</span>     <span class="c1"># TODO: allow writing to unmasked output if nothing is masked?</span>
+<span class="g g-Whitespace">    </span><span class="mi">699</span>     <span class="k">if</span> <span class="n">d</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">700</span>         <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;cannot write to unmasked output&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">701</span> <span class="k">elif</span> <span class="n">out_mask</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">702</span>     <span class="n">out_mask</span> <span class="o">=</span> <span class="n">m</span>
+
+<span class="ne">TypeError</span>: cannot write to unmasked output
 </pre></div>
 </div>
 </div>

@@ -919,10 +919,16 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>No data found for target &quot;Kepler-8&quot;.
-</pre></div>
-</div>
-<div class="output text_html">SearchResult containing 0 data products.</div></div>
+<div class="output text_html">SearchResult containing 4 data products.
+
+<table id="table139889134530720">
+<thead><tr><th>#</th><th>mission</th><th>year</th><th>author</th><th>exptime</th><th>target_name</th><th>distance</th></tr></thead>
+<thead><tr><th></th><th></th><th></th><th></th><th>s</th><th></th><th>arcsec</th></tr></thead>
+<tr><td>0</td><td>Kepler Quarter 04</td><td>2010</td><td><a href='https://archive.stsci.edu/kepler/data_products.html'>Kepler</a></td><td>60</td><td>kplr006922244</td><td>0.0</td></tr>
+<tr><td>1</td><td>Kepler Quarter 04</td><td>2010</td><td><a href='https://archive.stsci.edu/kepler/data_products.html'>Kepler</a></td><td>60</td><td>kplr006922244</td><td>0.0</td></tr>
+<tr><td>2</td><td>Kepler Quarter 04</td><td>2010</td><td><a href='https://archive.stsci.edu/kepler/data_products.html'>Kepler</a></td><td>60</td><td>kplr006922244</td><td>0.0</td></tr>
+<tr><td>3</td><td>Kepler Quarter 04</td><td>2010</td><td><a href='https://archive.stsci.edu/kepler/data_products.html'>Kepler</a></td><td>1800</td><td>kplr006922244</td><td>0.0</td></tr>
+</table></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -931,7 +937,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda/lib/python3.10/site-packages/lightkurve/search.py:402: LightkurveWarning: Cannot download from an empty search result.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda/lib/python3.10/site-packages/lightkurve/search.py:407: LightkurveWarning: Warning: 4 files available to download. Only the first file has been downloaded. Please use `download_all()` or specify additional criteria (e.g. quarter, campaign, or sector) to limit your search.
   warnings.warn(
 </pre></div>
 </div>
@@ -946,13 +952,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">first_cadence</span> <span class="o">=</span> <span class="n">tpf</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">first_cadence</span>
-
-<span class="ne">TypeError</span>: &#39;NoneType&#39; object is not subscriptable
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>KeplerTargetPixelFile Object (ID: 6922244)
 </pre></div>
 </div>
 </div>
@@ -974,6 +974,20 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[[          nan, 8.0390711e+00, 4.8509899e+01, 8.0933449e+01,
+         3.7914341e+01],
+        [4.9503891e+01, 7.3099373e+01, 1.1294020e+03, 3.2421128e+03,
+         4.6083792e+02],
+        [2.3193569e+01, 2.1991617e+02, 9.3725166e+03, 2.3602078e+04,
+         1.2132692e+03],
+        [3.1846043e+01, 8.9215948e+02, 1.7038822e+03, 2.6247312e+03,
+         7.1924988e+02],
+        [1.5339867e+02, 8.3342633e+02, 5.1096500e+02, 1.1593601e+03,
+         1.7446196e+02]]], dtype=float32)
+</pre></div>
+</div>
+</div>
 </div>
 <p>And you can plot the data as follows:</p>
 <div class="cell docutils container">
@@ -981,6 +995,9 @@ title="Print to PDF"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first_cadence</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;flux&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../../_images/kepler_plotting_target_pixel_files_16_0.png" src="../../../../_images/kepler_plotting_target_pixel_files_16_0.png" />
 </div>
 </div>
 <p>Alternatively, if you are working directly with a FITS file, you can access the data in extension 1 (for example, <code class="docutils literal notranslate"><span class="pre">first_cadence.hdu[1].data['FLUX']</span></code>). Note that you can find all of the details on the structure and contents of TPF files in Section 2.3.2 of the <a class="reference external" href="http://archive.stsci.edu/files/live/sites/mast/files/home/missions-and-data/kepler/_documents/archive_manual.pdf"><em>Kepler</em> Archive Manual</a>.</p>
@@ -996,6 +1013,9 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../../../../_images/kepler_plotting_target_pixel_files_20_0.png" src="../../../../_images/kepler_plotting_target_pixel_files_20_0.png" />
+</div>
 </div>
 <p>From looking at the color scale on both plots, you may see that the background flux is very low compared to the total flux emitted by a star. This is expected — stars are bright! But these small background corrections become important when looking at the very small scale changes caused by planets or stellar oscillations. Understanding the background is an important part of astronomy with <em>Kepler</em>, <em>K2</em>, and <em>TESS</em>.</p>
 <p>If the background is particularly bright and you want to see what the TPF looks like with it included, passing the <code class="docutils literal notranslate"><span class="pre">bkg=True</span></code> argument to the <code class="docutils literal notranslate"><span class="pre">plot()</span></code> method will show the TPF with the flux added on top of the background, representing the total flux recorded by the spacecraft.</p>
@@ -1004,6 +1024,9 @@ title="Print to PDF"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first_cadence</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">bkg</span><span class="o">=</span><span class="kc">True</span><span class="p">);</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../../_images/kepler_plotting_target_pixel_files_23_0.png" src="../../../../_images/kepler_plotting_target_pixel_files_23_0.png" />
 </div>
 </div>
 <p>In this case, the background is low and the star is bright, so it doesn’t appear to make much of a difference.</p>
@@ -1018,6 +1041,15 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[False, False, False, False, False],
+       [False, False,  True,  True, False],
+       [False, False,  True,  True, False],
+       [False,  True,  True,  True, False],
+       [False, False, False,  True, False]])
+</pre></div>
+</div>
+</div>
 </div>
 <p>As you can see, it is a Boolean array detailing which pixels are included. We can plot this aperture over the top of our TPF using the <code class="docutils literal notranslate"><span class="pre">plot()</span></code> function, and passing in the mask to the <code class="docutils literal notranslate"><span class="pre">aperture_mask</span></code> keyword. This will highlight the pixels included in the aperture mask using red hatched lines.</p>
 <div class="cell docutils container">
@@ -1025,6 +1057,41 @@ title="Print to PDF"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first_cadence</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">aperture_mask</span><span class="o">=</span><span class="n">first_cadence</span><span class="o">.</span><span class="n">pipeline_mask</span><span class="p">);</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">first_cadence</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">aperture_mask</span><span class="o">=</span><span class="n">first_cadence</span><span class="o">.</span><span class="n">pipeline_mask</span><span class="p">);</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.10/site-packages/lightkurve/targetpixelfile.py:1165,</span> in <span class="ni">TargetPixelFile.plot</span><span class="nt">(self, ax, frame, cadenceno, bkg, column, aperture_mask, show_colorbar, mask_color, title, style, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1163</span> <span class="c1"># Overlay the aperture mask if given</span>
+<span class="g g-Whitespace">   </span><span class="mi">1164</span> <span class="k">if</span> <span class="n">aperture_mask</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1165</span>     <span class="n">aperture_mask</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parse_aperture_mask</span><span class="p">(</span><span class="n">aperture_mask</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1166</span>     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1167</span>         <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]):</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.10/site-packages/lightkurve/targetpixelfile.py:659,</span> in <span class="ni">TargetPixelFile._parse_aperture_mask</span><span class="nt">(self, aperture_mask)</span>
+<span class="g g-Whitespace">    </span><span class="mi">653</span>     <span class="k">elif</span> <span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">654</span>         <span class="n">np</span><span class="o">.</span><span class="n">issubdtype</span><span class="p">(</span><span class="n">aperture_mask</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">integer</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">655</span>         <span class="ow">and</span> <span class="p">((</span><span class="n">aperture_mask</span> <span class="o">&amp;</span> <span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">any</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">656</span>     <span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">657</span>         <span class="c1"># Kepler and TESS pipeline style integer flags</span>
+<span class="g g-Whitespace">    </span><span class="mi">658</span>         <span class="n">aperture_mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">aperture_mask</span> <span class="o">&amp;</span> <span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span>
+<span class="ne">--&gt; </span><span class="mi">659</span>     <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">aperture_mask</span><span class="o">.</span><span class="n">flat</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">integer</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">)):</span>
+<span class="g g-Whitespace">    </span><span class="mi">660</span>         <span class="n">aperture_mask</span> <span class="o">=</span> <span class="n">aperture_mask</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">bool</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">661</span> <span class="bp">self</span><span class="o">.</span><span class="n">_last_aperture_mask</span> <span class="o">=</span> <span class="n">aperture_mask</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.10/site-packages/numpy/__init__.py:284,</span> in <span class="ni">__getattr__</span><span class="nt">(attr)</span>
+<span class="g g-Whitespace">    </span><span class="mi">281</span>     <span class="kn">from</span> <span class="nn">.testing</span> <span class="kn">import</span> <span class="n">Tester</span>
+<span class="g g-Whitespace">    </span><span class="mi">282</span>     <span class="k">return</span> <span class="n">Tester</span>
+<span class="ne">--&gt; </span><span class="mi">284</span> <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s2">&quot;module </span><span class="si">{!r}</span><span class="s2"> has no attribute &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">285</span>                      <span class="s2">&quot;</span><span class="si">{!r}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">attr</span><span class="p">))</span>
+
+<span class="ne">AttributeError</span>: module &#39;numpy&#39; has no attribute &#39;float&#39;
+</pre></div>
+</div>
+<img alt="../../../../_images/kepler_plotting_target_pixel_files_30_1.png" src="../../../../_images/kepler_plotting_target_pixel_files_30_1.png" />
 </div>
 </div>
 <p>You don’t necessarily have to pass in the <code class="docutils literal notranslate"><span class="pre">pipeline_mask</span></code> to the <code class="docutils literal notranslate"><span class="pre">plot()</span></code> function; it can be any mask you create yourself, provided it is the right shape. An accompanying tutorial explains how to create such custom apertures, and goes into aperture photometry in more detail. For specifics on the selection of <em>Kepler</em>’s optimal apertures, read the <a class="reference external" href="https://archive.stsci.edu/files/live/sites/mast/files/home/missions-and-data/kepler/_documents/KSCI-19081-002-KDPH.pdf"><em>Kepler</em> Data Processing Handbook</a>, Section 7, <em>Finding Optimal Apertures in Kepler Data</em>.</p>
