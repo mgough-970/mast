@@ -1124,10 +1124,14 @@ For tesscut, <em><strong>x</strong></em> refers to the CCD columns and <em><stro
 <span class="g g-Whitespace">    </span><span class="mi">487</span>         <span class="k">yield</span> <span class="p">(</span><span class="n">prefix</span> <span class="o">+</span> <span class="n">line</span> <span class="k">if</span> <span class="n">predicate</span><span class="p">(</span><span class="n">line</span><span class="p">)</span> <span class="k">else</span> <span class="n">line</span><span class="p">)</span>
 <span class="ne">--&gt; </span><span class="mi">488</span> <span class="k">return</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">prefixed_lines</span><span class="p">())</span>
 
-<span class="nn">File /usr/share/miniconda/lib/python3.10/textwrap.py:486,</span> in <span class="ni">indent.&lt;locals&gt;.prefixed_lines</span><span class="nt">()</span>
+<span class="nn">File /usr/share/miniconda/lib/python3.10/textwrap.py:487,</span> in <span class="ni">indent.&lt;locals&gt;.prefixed_lines</span><span class="nt">()</span>
 <span class="g g-Whitespace">    </span><span class="mi">485</span> <span class="k">def</span> <span class="nf">prefixed_lines</span><span class="p">():</span>
-<span class="ne">--&gt; </span><span class="mi">486</span>     <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">text</span><span class="o">.</span><span class="n">splitlines</span><span class="p">(</span><span class="kc">True</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">487</span>         <span class="k">yield</span> <span class="p">(</span><span class="n">prefix</span> <span class="o">+</span> <span class="n">line</span> <span class="k">if</span> <span class="n">predicate</span><span class="p">(</span><span class="n">line</span><span class="p">)</span> <span class="k">else</span> <span class="n">line</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">486</span>     <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">text</span><span class="o">.</span><span class="n">splitlines</span><span class="p">(</span><span class="kc">True</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">487</span>         <span class="k">yield</span> <span class="p">(</span><span class="n">prefix</span> <span class="o">+</span> <span class="n">line</span> <span class="k">if</span> <span class="n">predicate</span><span class="p">(</span><span class="n">line</span><span class="p">)</span> <span class="k">else</span> <span class="n">line</span><span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.10/textwrap.py:483,</span> in <span class="ni">indent.&lt;locals&gt;.predicate</span><span class="nt">(line)</span>
+<span class="g g-Whitespace">    </span><span class="mi">482</span> <span class="k">def</span> <span class="nf">predicate</span><span class="p">(</span><span class="n">line</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">483</span>     <span class="k">return</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
