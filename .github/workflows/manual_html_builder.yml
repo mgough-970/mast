@@ -4,4 +4,4 @@ on:
 
 jobs:
   GenerateHTML:
-   uses: TheRealZoidberg/reusableTest/.github/workflows/ci_builder_manual.yml@main
+   uses: spacetelescope/notebook-ci-actions/.github/workflows/ci_builder_manual.yml@main
