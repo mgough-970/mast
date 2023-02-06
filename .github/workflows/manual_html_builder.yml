@@ -1,0 +1,7 @@
+name: Build HTML
+on:
+  workflow_dispatch:
+
+jobs:
+  GenerateHTML:
+   uses: TheRealZoidberg/reusableTest/.github/workflows/ci_builder.yml@main
