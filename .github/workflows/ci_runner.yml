@@ -7,7 +7,11 @@
 
   
 name: Notebook Execution and Validation
-
+      
+env:
+  CASJOBS_PW: ${{ secrets.CASJOBS_PW }}
+  CASJOBS_USERID: ${{ secrets.CASJOBS_USERID }}
+  
 on: 
   pull_request:
     branches:
@@ -15,10 +19,6 @@ on:
     paths:
       - 'notebooks/**.ipynb'
       - '*.yml'
-      
-env:
-  CASJOBS_PW: ${{ secrets.CASJOBS_PW }}
-  CASJOBS_USERID: ${{ secrets.CASJOBS_USERID }}
 
 jobs:
   NotebookExecutionValidation:
