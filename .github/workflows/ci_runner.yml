@@ -22,5 +22,5 @@ on:
 
 jobs:
   NotebookExecutionValidation:
-   uses: TheRealZoidberg/reusableTest/.github/workflows/ci_runner.yml@main
+   uses: spacetelescope/notebook-ci-actions/.github/workflows/ci_runner.yml@main
 
