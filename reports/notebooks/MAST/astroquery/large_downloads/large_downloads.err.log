@@ -1,0 +1,65 @@
+Traceback (most recent call last):
+  File "/usr/share/miniconda/lib/python3.10/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/usr/share/miniconda/lib/python3.10/site-packages/nbclient/client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/usr/share/miniconda/lib/python3.10/site-packages/nbclient/util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/usr/share/miniconda/lib/python3.10/site-packages/nbclient/util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "/usr/share/miniconda/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
+    return future.result()
+  File "/usr/share/miniconda/lib/python3.10/site-packages/nbclient/client.py", line 663, in async_execute
+    await self.async_execute_cell(
+  File "/usr/share/miniconda/lib/python3.10/site-packages/nbclient/client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/usr/share/miniconda/lib/python3.10/site-packages/nbclient/client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+# Split the observations into "chunks" of size five
+sz_chunk = 5
+chunks = [matched_obs[i:i+sz_chunk] for i in range(0,len(matched_obs), sz_chunk)]
+
+# Get the list of products for each chunk
+t = [Observations.get_product_list(chunk) for chunk in chunks]
+
+# Keep only the unique files
+files = unique(vstack(t), keys='productFilename')
+
+# How many files are there? How large are they?
+print(f"There are {len(files)} unique files, which are {sum(files['size'])/10**9:.1f} GB in size.")
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mValueError[0m                                Traceback (most recent call last)
+Cell [0;32mIn[4], line 9[0m
+[1;32m      6[0m t [38;5;241m=[39m [Observations[38;5;241m.[39mget_product_list(chunk) [38;5;28;01mfor[39;00m chunk [38;5;129;01min[39;00m chunks]
+[1;32m      8[0m [38;5;66;03m# Keep only the unique files[39;00m
+[0;32m----> 9[0m files [38;5;241m=[39m unique([43mvstack[49m[43m([49m[43mt[49m[43m)[49m, keys[38;5;241m=[39m[38;5;124m'[39m[38;5;124mproductFilename[39m[38;5;124m'[39m)
+[1;32m     11[0m [38;5;66;03m# How many files are there? How large are they?[39;00m
+[1;32m     12[0m [38;5;28mprint[39m([38;5;124mf[39m[38;5;124m"[39m[38;5;124mThere are [39m[38;5;132;01m{[39;00m[38;5;28mlen[39m(files)[38;5;132;01m}[39;00m[38;5;124m unique files, which are [39m[38;5;132;01m{[39;00m[38;5;28msum[39m(files[[38;5;124m'[39m[38;5;124msize[39m[38;5;124m'[39m])[38;5;241m/[39m[38;5;241m10[39m[38;5;241m*[39m[38;5;241m*[39m[38;5;241m9[39m[38;5;132;01m:[39;00m[38;5;124m.1f[39m[38;5;132;01m}[39;00m[38;5;124m GB in size.[39m[38;5;124m"[39m)
+
+File [0;32m/usr/share/miniconda/lib/python3.10/site-packages/astropy/table/operations.py:683[0m, in [0;36mvstack[0;34m(tables, join_type, metadata_conflicts)[0m
+[1;32m    629[0m [38;5;250m[39m[38;5;124;03m"""[39;00m
+[1;32m    630[0m [38;5;124;03mStack tables vertically (along rows)[39;00m
+[1;32m    631[0m 
+[0;32m   (...)[0m
+[1;32m    679[0m [38;5;124;03m    6   8[39;00m
+[1;32m    680[0m [38;5;124;03m"""[39;00m
+[1;32m    681[0m _check_join_type(join_type, [38;5;124m"[39m[38;5;124mvstack[39m[38;5;124m"[39m)
+[0;32m--> 683[0m tables [38;5;241m=[39m [43m_get_list_of_tables[49m[43m([49m[43mtables[49m[43m)[49m  [38;5;66;03m# validates input[39;00m
+[1;32m    684[0m [38;5;28;01mif[39;00m [38;5;28mlen[39m(tables) [38;5;241m==[39m [38;5;241m1[39m:
+[1;32m    685[0m     [38;5;28;01mreturn[39;00m tables[[38;5;241m0[39m]  [38;5;66;03m# no point in stacking a single table[39;00m
+
+File [0;32m/usr/share/miniconda/lib/python3.10/site-packages/astropy/table/operations.py:62[0m, in [0;36m_get_list_of_tables[0;34m(tables)[0m
+[1;32m     60[0m [38;5;66;03m# Make sure there is something to stack[39;00m
+[1;32m     61[0m [38;5;28;01mif[39;00m [38;5;28mlen[39m(tables) [38;5;241m==[39m [38;5;241m0[39m:
+[0;32m---> 62[0m     [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m([38;5;124m"[39m[38;5;124mno values provided to stack.[39m[38;5;124m"[39m)
+[1;32m     64[0m [38;5;66;03m# Convert inputs (Table, Row, or anything column-like) to Tables.[39;00m
+[1;32m     65[0m [38;5;66;03m# Special case that Quantity converts to a QTable.[39;00m
+[1;32m     66[0m [38;5;28;01mfor[39;00m ii, val [38;5;129;01min[39;00m [38;5;28menumerate[39m(tables):
+
+[0;31mValueError[0m: no values provided to stack.
+ValueError: no values provided to stack.
+

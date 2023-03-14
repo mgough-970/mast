@@ -1,50 +1,61 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Searching for Kepler/K2 and TESS Data Products Using Lightkurve &#8212; MAST Notebook Repository</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../../../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../../../../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/main.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/table.css" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../../../../_static/main.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
 
     <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
     <script src="../../../../_static/jquery.js"></script>
     <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../../_static/doctools.js"></script>
     <script src="../../../../_static/clipboard.min.js"></script>
     <script src="../../../../_static/copybutton.js"></script>
-    <script src="../../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../../../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -52,63 +63,93 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/MAST/Kepler/kepler_searching_for_data_products/kepler_searching_for_data_products';</script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="Using Kepler Light Curve Products with Lightkurve" href="../kepler_using_light_curve_products_with_lightkurve/kepler_using_light_curve_products_with_lightkurve.html" />
     <link rel="prev" title="Plotting Kepler Target Pixel File Products with Lightkurve" href="../kepler_plotting_target_pixel_files/kepler_plotting_target_pixel_files.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
-
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../../../../index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../../../intro.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../../../../_static/mastlogo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">MAST Notebook Repository</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../../../../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="../../../../_static/mastlogo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../../../_static/mastlogo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -117,823 +158,432 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Astroquery
- </span>
-</p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Astroquery</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../astroquery/beginner_search_astroquery/beginner_search_astroquery.html">
-   Beginner: Searching MAST using astroquery.mast
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../astroquery/large_downloads/large_downloads.html">
-   Large Downloads in
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     astroquery.mast
-    </span>
-   </code>
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../../astroquery/beginner_search_astroquery/beginner_search_astroquery.html">Beginner: Searching MAST using astroquery.mast</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../astroquery/large_downloads/large_downloads.html">Large Downloads in <code class="docutils literal notranslate"><span class="pre">astroquery.mast</span></code></a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  HSC
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">HSC</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../HSC/HCV_API/HCV_API_demo.html">
-   Hubble Catalog of Variables Notebook (API version)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../HSC/HCV_CASJOBS/HCV_casjobs_demo.html">
-   Hubble Catalog of Variables Notebook (CasJobs version)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../HSC/HSCV3_API/hscv3_api.html">
-   Hubble Source Catalog API Notebook
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../HSC/HSCV3_SMC_API/hscv3_smc_api.html">
-   Hubble Source Catalog API Notebook: SMC Color-Magnitude Diagram
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../HSC/HSC_TAP/HSC_TAP.html">
-   MAST Table Access Protocol Hubble Source Catalog Demo
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../HSC/SWEEPS_HSCV3P1/sweeps_hscv3p1.html">
-   Hubble Source Catalog SWEEPS Proper Motion Notebook
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../HSC/SWEEPS_HSCV3P1_API/sweeps_hscv3p1_api.html">
-   Hubble Source Catalog SWEEPS Proper Motion Notebook
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../../HSC/HCV_API/HCV_API_demo.html">Hubble Catalog of Variables Notebook (API version)</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../../HSC/HCV_CASJOBS/HCV_casjobs_demo.html">Hubble Catalog of Variables Notebook (CasJobs version)</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../../HSC/HSCV3_API/hscv3_api.html">Hubble Source Catalog API Notebook</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../../HSC/HSCV3_SMC_API/hscv3_smc_api.html">Hubble Source Catalog API Notebook: SMC Color-Magnitude Diagram</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../../HSC/HSC_TAP/HSC_TAP.html">MAST Table Access Protocol Hubble Source Catalog Demo</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../../HSC/SWEEPS_HSCV3P1/sweeps_hscv3p1.html">Hubble Source Catalog SWEEPS Proper Motion Notebook</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../../HSC/SWEEPS_HSCV3P1_API/sweeps_hscv3p1_api.html">Hubble Source Catalog SWEEPS Proper Motion Notebook</a></li>
+
+
+
+
+
+
+
+
+
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  JWST
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">JWST</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../JWST/download_by_program_id/download_by_program_id.html">
-   Accessing JWST Proposal Data in astroquery.mast
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../JWST/Engineering_Database_Retreival/EDB_Retrieval.html">
-   JWST Engineering Data Retrieval
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../../JWST/download_by_program_id/download_by_program_id.html">Accessing JWST Proposal Data in astroquery.mast</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../JWST/Engineering_Database_Retreival/EDB_Retrieval.html">JWST Engineering Data Retrieval</a></li>
+
+
+
+
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Kepler K2
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Kepler K2</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../K2/K2_Lightcurve/K2_Lightcurve.html">
-   Beginner: Read and Plot A K2 Light Curve File
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../K2/K2_TPF/K2_TPF.html">
-   Beginner: Read and Display A K2 Target Pixel File
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../K2/beginner_how_to_use_ffi/beginner_how_to_use_ffi.html">
-   Beginner: Read and Display a K2 Full Frame Image
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../K2/k2_removing_instrumental_noise_using_pld/k2_removing_instrumental_noise_using_pld.html">
-   Removing Instrumental Noise from
-   <em>
-    K2
-   </em>
-   and
-   <em>
-    TESS
-   </em>
-   Light Curves Using Pixel Level Decorrelation (PLD)
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../../K2/K2_Lightcurve/K2_Lightcurve.html">Beginner: Read and Plot A K2 Light Curve File</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../K2/K2_TPF/K2_TPF.html">Beginner: Read and Display A K2 Target Pixel File</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../K2/beginner_how_to_use_ffi/beginner_how_to_use_ffi.html">Beginner: Read and Display a K2 Full Frame Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../K2/k2_removing_instrumental_noise_using_pld/k2_removing_instrumental_noise_using_pld.html">Removing Instrumental Noise from <em>K2</em> and <em>TESS</em> Light Curves Using Pixel Level Decorrelation (PLD)</a></li>
+
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Kepler
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Kepler</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../Kepler_DVT/Kepler_DVT.html">
-   Read and Plot A Kepler Data Validation Timeseries File
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Kepler_FFI/kepler_ffi.html">
-   Plotting a Catalog over a Kepler Full Frame Image File
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Kepler_Lightcurve/kepler_lightcurve.html">
-   Using Kepler Data to Plot a Light Curve
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Kepler_TPF/kepler_tpf.html">
-   Plotting Images from Kepler Target Pixel Files
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../kepler_combining_multiple_quarters/kepler_combining_multiple_quarters.html">
-   Combining Multiple Quarters of
-   <em>
-    Kepler
-   </em>
-   Data with Lightkurve
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../kepler_creating_periodograms/kepler_creating_periodograms.html">
-   Creating Periodograms and Identifying Significant Peaks
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../kepler_creating_your_own_light_curves/kepler_creating_your_own_light_curves.html">
-   Creating Your Own Light Curves using Custom Aperture Photometry
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../kepler_how_to_estimate_a_stars_mass_and_radius_using_asteroseismology/kepler_how_to_estimate_a_stars_mass_and_radius_using_asteroseismology.html">
-   How to Estimate a Star’s Mass and Radius Using Asteroseismology
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../kepler_how_to_understand_and_manipulate_the_periodogram_of_an_oscillating_star/kepler_how_to_understand_and_manipulate_the_periodogram_of_an_oscillating_star.html">
-   How to Understand and Manipulate the Periodogram of an Oscillating Star
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../kepler_identifying_transiting_planet_signals/kepler_identifying_transiting_planet_signals.html">
-   Identifying Transiting Planet Signals in a
-   <em>
-    Kepler
-   </em>
-   Light Curve
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../kepler_instrumental_noise_1_data_gaps_and_quality_flags/kepler_instrumental_noise_1_data_gaps_and_quality_flags.html">
-   Instrumental Noise in
-   <em>
-    Kepler
-   </em>
-   and
-   <em>
-    K2
-   </em>
-   #1: Data Gaps and Quality Flags
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../kepler_instrumental_noise_2_spurious_signals_and_time_sampling_effects/kepler_instrumental_noise_2_spurious_signals_and_time_sampling_effects.html">
-   Instrumental Noise in
-   <em>
-    Kepler
-   </em>
-   and
-   <em>
-    K2
-   </em>
-   #2: Spurious Signals and Time Sampling Effects
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../kepler_instrumental_noise_3_seasonal_and_detector_effects/kepler_instrumental_noise_3_seasonal_and_detector_effects.html">
-   Instrumental Noise in
-   <em>
-    Kepler
-   </em>
-   and
-   <em>
-    K2
-   </em>
-   #3: Seasonal and Detector Effects
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../kepler_instrumental_noise_4_electronic_noise/kepler_instrumental_noise_4_electronic_noise.html">
-   Instrumental Noise in
-   <em>
-    Kepler
-   </em>
-   and
-   <em>
-    K2
-   </em>
-   #4: Electronic Noise
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../kepler_interactively_inspecting_target_pixel_files_and_light_curves/kepler_interactively_inspecting_target_pixel_files_and_light_curves.html">
-   Interactively Inspecting Target Pixel Files and Light Curves
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../kepler_measuring_a_rotation_period/kepler_measuring_a_rotation_period.html">
-   Measuring and Removing a Rotation Period Signal from a
-   <em>
-    Kepler
-   </em>
-   Light Curve
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../kepler_plotting_target_pixel_files/kepler_plotting_target_pixel_files.html">
-   Plotting
-   <em>
-    Kepler
-   </em>
-   Target Pixel File Products with Lightkurve
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Searching for
-   <em>
-    Kepler
-   </em>
-   /
-   <em>
-    K2
-   </em>
-   and
-   <em>
-    TESS
-   </em>
-   Data Products Using Lightkurve
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../kepler_using_light_curve_products_with_lightkurve/kepler_using_light_curve_products_with_lightkurve.html">
-   Using
-   <em>
-    Kepler
-   </em>
-   Light Curve Products with Lightkurve
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../kepler_using_target_pixel_file_products_with_lightkurve/kepler_using_target_pixel_file_products_with_lightkurve.html">
-   Using
-   <em>
-    Kepler
-   </em>
-   Target Pixel File Products with Lightkurve
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../kepler_verifying_the_location_of_a_signal/kepler_verifying_the_location_of_a_signal.html">
-   Verifying the Location of a Signal in
-   <em>
-    Kepler
-   </em>
-   Pixel Data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../kepler_visualizing_periodic_signals_using_a_river_plot/kepler_visualizing_periodic_signals_using_a_river_plot.html">
-   Visualizing Periodic Signals Using a River Plot
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../Kepler_DVT/Kepler_DVT.html">Read and Plot A Kepler Data Validation Timeseries File</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Kepler_FFI/kepler_ffi.html">Plotting a Catalog over a Kepler Full Frame Image File</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Kepler_Lightcurve/kepler_lightcurve.html">Using Kepler Data to Plot a Light Curve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Kepler_TPF/kepler_tpf.html">Plotting Images from Kepler Target Pixel Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kepler_combining_multiple_quarters/kepler_combining_multiple_quarters.html">Combining Multiple Quarters of <em>Kepler</em> Data with Lightkurve</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../kepler_creating_periodograms/kepler_creating_periodograms.html">Creating Periodograms and Identifying Significant Peaks</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../kepler_creating_your_own_light_curves/kepler_creating_your_own_light_curves.html">Creating Your Own Light Curves using Custom Aperture Photometry</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../kepler_how_to_estimate_a_stars_mass_and_radius_using_asteroseismology/kepler_how_to_estimate_a_stars_mass_and_radius_using_asteroseismology.html">How to Estimate a Star’s Mass and Radius Using Asteroseismology</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../kepler_how_to_understand_and_manipulate_the_periodogram_of_an_oscillating_star/kepler_how_to_understand_and_manipulate_the_periodogram_of_an_oscillating_star.html">How to Understand and Manipulate the Periodogram of an Oscillating Star</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../kepler_identifying_transiting_planet_signals/kepler_identifying_transiting_planet_signals.html">Identifying Transiting Planet Signals in a <em>Kepler</em> Light Curve</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../kepler_instrumental_noise_1_data_gaps_and_quality_flags/kepler_instrumental_noise_1_data_gaps_and_quality_flags.html">Instrumental Noise in <em>Kepler</em> and <em>K2</em> #1: Data Gaps and Quality Flags</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../kepler_instrumental_noise_2_spurious_signals_and_time_sampling_effects/kepler_instrumental_noise_2_spurious_signals_and_time_sampling_effects.html">Instrumental Noise in <em>Kepler</em> and <em>K2</em> #2: Spurious Signals and Time Sampling Effects</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../kepler_instrumental_noise_3_seasonal_and_detector_effects/kepler_instrumental_noise_3_seasonal_and_detector_effects.html">Instrumental Noise in <em>Kepler</em> and <em>K2</em> #3: Seasonal and Detector Effects</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../kepler_instrumental_noise_4_electronic_noise/kepler_instrumental_noise_4_electronic_noise.html">Instrumental Noise in <em>Kepler</em> and <em>K2</em> #4: Electronic Noise</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../kepler_interactively_inspecting_target_pixel_files_and_light_curves/kepler_interactively_inspecting_target_pixel_files_and_light_curves.html">Interactively Inspecting Target Pixel Files and Light Curves</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../kepler_measuring_a_rotation_period/kepler_measuring_a_rotation_period.html">Measuring and Removing a Rotation Period Signal from a <em>Kepler</em> Light Curve</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../kepler_plotting_target_pixel_files/kepler_plotting_target_pixel_files.html">Plotting <em>Kepler</em> Target Pixel File Products with Lightkurve</a></li>
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Searching for <em>Kepler</em>/<em>K2</em> and <em>TESS</em> Data Products Using Lightkurve</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../kepler_using_light_curve_products_with_lightkurve/kepler_using_light_curve_products_with_lightkurve.html">Using <em>Kepler</em> Light Curve Products with Lightkurve</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../kepler_using_target_pixel_file_products_with_lightkurve/kepler_using_target_pixel_file_products_with_lightkurve.html">Using <em>Kepler</em> Target Pixel File Products with Lightkurve</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../kepler_verifying_the_location_of_a_signal/kepler_verifying_the_location_of_a_signal.html">Verifying the Location of a Signal in <em>Kepler</em> Pixel Data</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../kepler_visualizing_periodic_signals_using_a_river_plot/kepler_visualizing_periodic_signals_using_a_river_plot.html">Visualizing Periodic Signals Using a River Plot</a></li>
+
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  PanSTARRS
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">PanSTARRS</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../PanSTARRS/PS1_DR2_TAP/PS1_DR2_TAP.html">
-   MAST Table Access Protocol PanSTARRS 1 DR2 Demo
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../../PanSTARRS/PS1_DR2_TAP/PS1_DR2_TAP.html">MAST Table Access Protocol PanSTARRS 1 DR2 Demo</a></li>
+
+
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  TESS
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">TESS</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../TESS/beginner_astroquery_dv/beginner_astroquery_dv.html">
-   Beginner: Retrieve TESS Data Validation Products with Astroquery
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../TESS/beginner_how_to_use_dvt/beginner_how_to_use_dvt.html">
-   Beginner: Read and Plot A TESS Data Validation Timeseries File
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../TESS/beginner_how_to_use_ffi/beginner_how_to_use_ffi.html">
-   Beginner: Read and Display a TESS Full Frame Image
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../TESS/beginner_how_to_use_lc/beginner_how_to_use_lc.html">
-   Beginner: Read and Plot A TESS Light Curve File
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../TESS/beginner_how_to_use_tp/beginner_how_to_use_tp.html">
-   Beginner: Read and Display A TESS Target Pixel File
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../TESS/beginner_tess_exomast/beginner_tess_exomast.html">
-   Exoplanet Data and TESS Light Curves Using Python Requests
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../TESS/beginner_tess_tap_search/beginner_tess_tap_search.html">
-   Download MAST TESS Light Curves Within an FFI Footprint Using TAP
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../TESS/beginner_tic_search_hd209458/beginner_tic_search_hd209458.html">
-   Beginner: Search The TESS Input Catalog Centered On HD 209458.
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../TESS/beginner_tour_lc_tp/beginner_tour_lc_tp.html">
-   Beginnner: A Tour of the Contents of the TESS 2-minute Cadence Data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../TESS/interm_gi_query/interm_gi_query.html">
-   Intermediate:  Search and Download GI Program Light Curves
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../TESS/interm_tasc_lc/interm_tasc_lc.html">
-   Intermediate: Finding Flares and Variable Stars in TASC Light Curves
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../TESS/interm_tess_prf_retrieve/interm_tess_prf_retrieve.html">
-   Intermediate: Retrieve TESS Pixel Response Function Images
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../TESS/interm_tesscut_astroquery/interm_tesscut_astroquery.html">
-   Beginner: Cutout of the TESS FFIs using Astrocut and Astroquery
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../TESS/interm_tesscut_dss_overlay/interm_tesscut_dss_overlay.html">
-   Intermediate: Overlay a Cutout of the TESS FFIs with DSS imaging
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../TESS/interm_tesscut_requests/interm_tesscut_requests.html">
-   Intermediate: Create TESS FFI Cutout using Python Requests
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../TESS/tess_removing_scattered_light_using_regression/tess_removing_scattered_light_using_regression.html">
-   Removing Scattered Light from
-   <em>
-    TESS
-   </em>
-   Data Using the Lightkurve
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     RegressionCorrector
-    </span>
-   </code>
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../../TESS/beginner_astroquery_dv/beginner_astroquery_dv.html">Beginner: Retrieve TESS Data Validation Products with Astroquery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../TESS/beginner_how_to_use_dvt/beginner_how_to_use_dvt.html">Beginner: Read and Plot A TESS Data Validation Timeseries File</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../TESS/beginner_how_to_use_ffi/beginner_how_to_use_ffi.html">Beginner: Read and Display a TESS Full Frame Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../TESS/beginner_how_to_use_lc/beginner_how_to_use_lc.html">Beginner: Read and Plot A TESS Light Curve File</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../TESS/beginner_how_to_use_tp/beginner_how_to_use_tp.html">Beginner: Read and Display A TESS Target Pixel File</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../TESS/beginner_tess_exomast/beginner_tess_exomast.html">Exoplanet Data and TESS Light Curves Using Python Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../TESS/beginner_tess_tap_search/beginner_tess_tap_search.html">Download MAST TESS Light Curves Within an FFI Footprint Using TAP</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../../TESS/beginner_tic_search_hd209458/beginner_tic_search_hd209458.html">Beginner: Search The TESS Input Catalog Centered On HD 209458.</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../../TESS/beginner_tour_lc_tp/beginner_tour_lc_tp.html">Beginnner: A Tour of the Contents of the TESS 2-minute Cadence Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../TESS/interm_gi_query/interm_gi_query.html">Intermediate:  Search and Download GI Program Light Curves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../TESS/interm_tasc_lc/interm_tasc_lc.html">Intermediate: Finding Flares and Variable Stars in TASC Light Curves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../TESS/interm_tess_prf_retrieve/interm_tess_prf_retrieve.html">Intermediate: Retrieve TESS Pixel Response Function Images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../TESS/interm_tesscut_astroquery/interm_tesscut_astroquery.html">Beginner: Cutout of the TESS FFIs using Astrocut and Astroquery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../TESS/interm_tesscut_dss_overlay/interm_tesscut_dss_overlay.html">Intermediate: Overlay a Cutout of the TESS FFIs with DSS imaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../TESS/interm_tesscut_requests/interm_tesscut_requests.html">Intermediate: Create TESS FFI Cutout using Python Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../TESS/tess_removing_scattered_light_using_regression/tess_removing_scattered_light_using_regression.html">Removing Scattered Light from <em>TESS</em> Data Using the Lightkurve <code class="docutils literal notranslate"><span class="pre">RegressionCorrector</span></code></a></li>
+
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/TheRealZoidberg/mast/blob/main/notebooks/MAST/Kepler/kepler_searching_for_data_products/kepler_searching_for_data_products.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
 </div>
 
 
-          
-
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
 
 
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/TheRealZoidberg/mast" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
   </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/TheRealZoidberg/mast/issues/new?title=Issue%20on%20page%20%2Fnotebooks/MAST/Kepler/kepler_searching_for_data_products/kepler_searching_for_data_products.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../../_sources/notebooks/MAST/Kepler/kepler_searching_for_data_products/kepler_searching_for_data_products.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/TheRealZoidberg/mast/"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/TheRealZoidberg/mast//issues/new?title=Issue%20on%20page%20%2Fnotebooks/MAST/Kepler/kepler_searching_for_data_products/kepler_searching_for_data_products.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../../../../_sources/notebooks/MAST/Kepler/kepler_searching_for_data_products/kepler_searching_for_data_products.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Searching for
-   <em>
-    Kepler
-   </em>
-   /
-   <em>
-    K2
-   </em>
-   and
-   <em>
-    TESS
-   </em>
-   Data Products Using Lightkurve
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#learning-goals">
-     Learning Goals
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#introduction">
-     Introduction
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#imports">
-     Imports
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#what-data-products-are-available">
-     1. What Data Products are Available?
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#searching-for-light-curves">
-     2. Searching for Light Curves
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#downloading-a-single-light-curve">
-       2.1 Downloading a single light curve
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#downloading-a-collection-of-light-curves">
-       2.2 Downloading a collection of light curves
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#searching-for-target-pixel-files">
-     3. Searching for Target Pixel Files
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#downloading-a-single-target-pixel-file">
-       3.1 Downloading a single target pixel file
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#downloading-a-collection-of-target-pixel-files">
-       3.2 Downloading a collection of target pixel files
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#searching-for-tess-full-frame-image-ffi-cutouts">
-     4. Searching for
-     <em>
-      TESS
-     </em>
-     Full Frame Image (FFI) Cutouts
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#performing-a-cone-search">
-     5. Performing a Cone Search
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#about-this-notebook">
-     About this Notebook
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#citing-lightkurve-and-astropy">
-   Citing Lightkurve and Astropy
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Searching for Kepler/K2 and TESS Data Products Using Lightkurve</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Searching for
-   <em>
-    Kepler
-   </em>
-   /
-   <em>
-    K2
-   </em>
-   and
-   <em>
-    TESS
-   </em>
-   Data Products Using Lightkurve
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#learning-goals">
-     Learning Goals
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#introduction">
-     Introduction
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#imports">
-     Imports
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#what-data-products-are-available">
-     1. What Data Products are Available?
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#searching-for-light-curves">
-     2. Searching for Light Curves
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#downloading-a-single-light-curve">
-       2.1 Downloading a single light curve
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#downloading-a-collection-of-light-curves">
-       2.2 Downloading a collection of light curves
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#searching-for-target-pixel-files">
-     3. Searching for Target Pixel Files
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#downloading-a-single-target-pixel-file">
-       3.1 Downloading a single target pixel file
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#downloading-a-collection-of-target-pixel-files">
-       3.2 Downloading a collection of target pixel files
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#searching-for-tess-full-frame-image-ffi-cutouts">
-     4. Searching for
-     <em>
-      TESS
-     </em>
-     Full Frame Image (FFI) Cutouts
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#performing-a-cone-search">
-     5. Performing a Cone Search
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#about-this-notebook">
-     About this Notebook
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#citing-lightkurve-and-astropy">
-   Citing Lightkurve and Astropy
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Searching for Kepler/K2 and TESS Data Products Using Lightkurve</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Searching for <em>Kepler</em>/<em>K2</em> and <em>TESS</em> Data Products Using Lightkurve</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-goals">Learning Goals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imports">Imports</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-data-products-are-available">1. What Data Products are Available?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#searching-for-light-curves">2. Searching for Light Curves</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-a-single-light-curve">2.1 Downloading a single light curve</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-a-collection-of-light-curves">2.2 Downloading a collection of light curves</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#searching-for-target-pixel-files">3. Searching for Target Pixel Files</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-a-single-target-pixel-file">3.1 Downloading a single target pixel file</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-a-collection-of-target-pixel-files">3.2 Downloading a collection of target pixel files</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#searching-for-tess-full-frame-image-ffi-cutouts">4. Searching for <em>TESS</em> Full Frame Image (FFI) Cutouts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#performing-a-cone-search">5. Performing a Cone Search</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-this-notebook">About this Notebook</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#citing-lightkurve-and-astropy">Citing Lightkurve and Astropy</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
-  <section class="tex2jax_ignore mathjax_ignore" id="searching-for-kepler-k2-and-tess-data-products-using-lightkurve">
-<h1>Searching for <em>Kepler</em>/<em>K2</em> and <em>TESS</em> Data Products Using Lightkurve<a class="headerlink" href="#searching-for-kepler-k2-and-tess-data-products-using-lightkurve" title="Permalink to this headline">#</a></h1>
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="searching-for-kepler-k2-and-tess-data-products-using-lightkurve">
+<h1>Searching for <em>Kepler</em>/<em>K2</em> and <em>TESS</em> Data Products Using Lightkurve<a class="headerlink" href="#searching-for-kepler-k2-and-tess-data-products-using-lightkurve" title="Permalink to this heading">#</a></h1>
 <hr class="docutils" />
 <section id="learning-goals">
-<h2>Learning Goals<a class="headerlink" href="#learning-goals" title="Permalink to this headline">#</a></h2>
+<h2>Learning Goals<a class="headerlink" href="#learning-goals" title="Permalink to this heading">#</a></h2>
 <p>By the end of this tutorial, you will:</p>
 <ul class="simple">
 <li><p>Understand the data products available to query and download.</p></li>
@@ -943,12 +593,12 @@ title="Print to PDF"
 </ul>
 </section>
 <section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
 <p>The <a class="reference external" href="https://docs.lightkurve.org">Lightkurve</a> Python package has functions to search for and download observations from <em>Kepler</em>/<em>K2</em> and <em>TESS</em>. These tools are built to make accessing space telescope data clear and straightforward, with intuitive method and keyword names.</p>
 <p>This tutorial outlines what data products are available to query with Lightkurve, and gives examples of how to use the functions to search for and download space telescope observations.</p>
 </section>
 <section id="imports">
-<h2>Imports<a class="headerlink" href="#imports" title="Permalink to this headline">#</a></h2>
+<h2>Imports<a class="headerlink" href="#imports" title="Permalink to this heading">#</a></h2>
 <p>This tutorial requires the <a class="reference external" href="http://docs.lightkurve.org/"><strong>Lightkurve</strong></a> package, which uses <a class="reference external" href="https://matplotlib.org/"><strong>Matplotlib</strong></a> for plotting.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -962,7 +612,7 @@ title="Print to PDF"
 </section>
 <hr class="docutils" />
 <section id="what-data-products-are-available">
-<h2>1. What Data Products are Available?<a class="headerlink" href="#what-data-products-are-available" title="Permalink to this headline">#</a></h2>
+<h2>1. What Data Products are Available?<a class="headerlink" href="#what-data-products-are-available" title="Permalink to this heading">#</a></h2>
 <p><em>Kepler</em>/<em>K2</em> and <em>TESS</em> data products are stored on the Mikulski Archive for Space Telescopes (MAST) in two main forms:</p>
 <ul class="simple">
 <li><p><strong>Light curve products</strong>: tables containing the measured flux at each observation time.</p></li>
@@ -976,7 +626,7 @@ title="Print to PDF"
 <p>Lightkurve allows you to query and download each of these data products. The following sections contain examples of how to use the search functions in Lightkurve.</p>
 </section>
 <section id="searching-for-light-curves">
-<h2>2. Searching for Light Curves<a class="headerlink" href="#searching-for-light-curves" title="Permalink to this headline">#</a></h2>
+<h2>2. Searching for Light Curves<a class="headerlink" href="#searching-for-light-curves" title="Permalink to this heading">#</a></h2>
 <p>Lightkurve uses <a class="reference external" href="https://astroquery.readthedocs.io/en/latest/">Astroquery</a> to search for data products. Astroquery allows searches based on a target’s coordinates, catalog ID number, or name.</p>
 <p>This is passed into the search function using the <code class="docutils literal notranslate"><span class="pre">target</span></code> keyword, and all valid inputs for identifying a target include:</p>
 <ul class="simple">
@@ -998,7 +648,7 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output text_html">SearchResult containing 18 data products.
 
-<table id="table139993088995824">
+<table id="table139630648504288">
 <thead><tr><th>#</th><th>mission</th><th>year</th><th>author</th><th>exptime</th><th>target_name</th><th>distance</th></tr></thead>
 <thead><tr><th></th><th></th><th></th><th></th><th>s</th><th></th><th>arcsec</th></tr></thead>
 <tr><td>0</td><td>Kepler Quarter 01</td><td>2009</td><td><a href='https://archive.stsci.edu/kepler/data_products.html'>Kepler</a></td><td>1800</td><td>kplr003733346</td><td>0.0</td></tr>
@@ -1032,7 +682,7 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output text_html">SearchResult containing 1 data products.
 
-<table id="table139993088995824">
+<table id="table139630648503472">
 <thead><tr><th>#</th><th>mission</th><th>year</th><th>author</th><th>exptime</th><th>target_name</th><th>distance</th></tr></thead>
 <thead><tr><th></th><th></th><th></th><th></th><th>s</th><th></th><th>arcsec</th></tr></thead>
 <tr><td>0</td><td>Kepler Quarter 01</td><td>2009</td><td><a href='https://archive.stsci.edu/kepler/data_products.html'>Kepler</a></td><td>1800</td><td>kplr003733346</td><td>0.0</td></tr>
@@ -1122,7 +772,7 @@ sort_order
 <div class="cell_output docutils container">
 <div class="output text_html">SearchResult containing 1 data products.
 
-<table id="table139993088998368">
+<table id="table139630648153984">
 <thead><tr><th>#</th><th>mission</th><th>year</th><th>author</th><th>exptime</th><th>target_name</th><th>distance</th></tr></thead>
 <thead><tr><th></th><th></th><th></th><th></th><th>s</th><th></th><th>arcsec</th></tr></thead>
 <tr><td>0</td><td>Kepler Quarter 02</td><td>2009</td><td><a href='https://archive.stsci.edu/kepler/data_products.html'>Kepler</a></td><td>1800</td><td>kplr003733346</td><td>0.0</td></tr>
@@ -1145,14 +795,14 @@ sort_order
 <div class="cell_output docutils container">
 <div class="output text_html">SearchResult containing 1 data products.
 
-<table id="table139993088995824">
+<table id="table139630648505008">
 <thead><tr><th>#</th><th>mission</th><th>year</th><th>author</th><th>exptime</th><th>target_name</th><th>distance</th></tr></thead>
 <thead><tr><th></th><th></th><th></th><th></th><th>s</th><th></th><th>arcsec</th></tr></thead>
 <tr><td>0</td><td>Kepler Quarter 02</td><td>2009</td><td><a href='https://archive.stsci.edu/kepler/data_products.html'>Kepler</a></td><td>1800</td><td>kplr003733346</td><td>0.0</td></tr>
 </table></div></div>
 </div>
 <section id="downloading-a-single-light-curve">
-<h3>2.1 Downloading a single light curve<a class="headerlink" href="#downloading-a-single-light-curve" title="Permalink to this headline">#</a></h3>
+<h3>2.1 Downloading a single light curve<a class="headerlink" href="#downloading-a-single-light-curve" title="Permalink to this heading">#</a></h3>
 <p>A light curve can be downloaded by calling <code class="docutils literal notranslate"><span class="pre">.download()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1163,7 +813,7 @@ sort_order
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>KeplerLightCurve length=4075 LABEL=&quot;KIC 3733346&quot; QUARTER=2 AUTHOR=Kepler FLUX_ORIGIN=pdcsap_flux</i>
-<table id="table139993659218752" class="table-striped table-bordered table-condensed">
+<table id="table139631342478688" class="table-striped table-bordered table-condensed">
 <thead><tr><th>time</th><th>flux</th><th>flux_err</th><th>quality</th><th>timecorr</th><th>centroid_col</th><th>centroid_row</th><th>cadenceno</th><th>sap_flux</th><th>sap_flux_err</th><th>sap_bkg</th><th>sap_bkg_err</th><th>pdcsap_flux</th><th>pdcsap_flux_err</th><th>sap_quality</th><th>psf_centr1</th><th>psf_centr1_err</th><th>psf_centr2</th><th>psf_centr2_err</th><th>mom_centr1</th><th>mom_centr1_err</th><th>mom_centr2</th><th>mom_centr2_err</th><th>pos_corr1</th><th>pos_corr2</th></tr></thead>
 <thead><tr><th></th><th>electron / s</th><th>electron / s</th><th></th><th>d</th><th>pix</th><th>pix</th><th></th><th>electron / s</th><th>electron / s</th><th>electron / s</th><th>electron / s</th><th>electron / s</th><th>electron / s</th><th></th><th>pix</th><th>pix</th><th>pix</th><th>pix</th><th>pix</th><th>pix</th><th>pix</th><th>pix</th><th>pix</th><th>pix</th></tr></thead>
 <thead><tr><th>Time</th><th>float32</th><th>float32</th><th>int32</th><th>float32</th><th>float64</th><th>float64</th><th>int32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>int32</th><th>float64</th><th>float32</th><th>float64</th><th>float32</th><th>float64</th><th>float32</th><th>float64</th><th>float32</th><th>float32</th><th>float32</th></tr></thead>
@@ -1197,12 +847,12 @@ sort_order
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../../_images/kepler_searching_for_data_products_22_0.png" src="../../../../_images/kepler_searching_for_data_products_22_0.png" />
+<img alt="../../../../_images/31ddf7f6afc0c49251855611cd983362eca2a7f8a5e39ebbfd7a4fc301a48830.png" src="../../../../_images/31ddf7f6afc0c49251855611cd983362eca2a7f8a5e39ebbfd7a4fc301a48830.png" />
 </div>
 </div>
 </section>
 <section id="downloading-a-collection-of-light-curves">
-<h3>2.2 Downloading a collection of light curves<a class="headerlink" href="#downloading-a-collection-of-light-curves" title="Permalink to this headline">#</a></h3>
+<h3>2.2 Downloading a collection of light curves<a class="headerlink" href="#downloading-a-collection-of-light-curves" title="Permalink to this heading">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">SearchResult</span></code> object also has a <code class="docutils literal notranslate"><span class="pre">download_all</span></code> method, allowing you to download multiple light curves. This returns a <code class="docutils literal notranslate"><span class="pre">LightCurveCollection</span></code>, a convenient container for <code class="docutils literal notranslate"><span class="pre">LightCurve</span></code> objects.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1234,7 +884,7 @@ sort_order
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../../_images/kepler_searching_for_data_products_27_0.png" src="../../../../_images/kepler_searching_for_data_products_27_0.png" />
+<img alt="../../../../_images/d4cb8deddd310d6a9df86a0f41e4e255e402be89ee83db03aa6f931d8e9eec96.png" src="../../../../_images/d4cb8deddd310d6a9df86a0f41e4e255e402be89ee83db03aa6f931d8e9eec96.png" />
 </div>
 </div>
 <p>You can also iterate through a collection to label them more clearly and to perform additional actions like normalization.</p>
@@ -1247,13 +897,13 @@ sort_order
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../../_images/kepler_searching_for_data_products_29_0.png" src="../../../../_images/kepler_searching_for_data_products_29_0.png" />
+<img alt="../../../../_images/462a0b2289bb81fd0df428c7d3713044f0386f9a5bd16f468150d5431283202f.png" src="../../../../_images/462a0b2289bb81fd0df428c7d3713044f0386f9a5bd16f468150d5431283202f.png" />
 </div>
 </div>
 </section>
 </section>
 <section id="searching-for-target-pixel-files">
-<h2>3. Searching for Target Pixel Files<a class="headerlink" href="#searching-for-target-pixel-files" title="Permalink to this headline">#</a></h2>
+<h2>3. Searching for Target Pixel Files<a class="headerlink" href="#searching-for-target-pixel-files" title="Permalink to this heading">#</a></h2>
 <p>The other primary data product used by Lightkurve is the <code class="docutils literal notranslate"><span class="pre">TargetPixelFile</span></code>, or TPF. A TPF is a stack of images containing the flux in each pixel at each cadence.</p>
 <p>Similar to the approach above, we can use the <code class="docutils literal notranslate"><span class="pre">search_targetpixelfile</span></code> method to identify available observations.</p>
 <div class="cell docutils container">
@@ -1266,7 +916,7 @@ sort_order
 <div class="cell_output docutils container">
 <div class="output text_html">SearchResult containing 3 data products.
 
-<table id="table139992999884400">
+<table id="table139630558862768">
 <thead><tr><th>#</th><th>mission</th><th>year</th><th>author</th><th>exptime</th><th>target_name</th><th>distance</th></tr></thead>
 <thead><tr><th></th><th></th><th></th><th></th><th>s</th><th></th><th>arcsec</th></tr></thead>
 <tr><td>0</td><td>K2 Campaign 06</td><td>2015</td><td><a href='https://archive.stsci.edu/k2/data_products.html'>K2</a></td><td>1800</td><td>ktwo212779596</td><td>0.0</td></tr>
@@ -1276,7 +926,7 @@ sort_order
 </div>
 <p>This returns a table which contains the same information as a light curve search result.</p>
 <section id="downloading-a-single-target-pixel-file">
-<h3>3.1 Downloading a single target pixel file<a class="headerlink" href="#downloading-a-single-target-pixel-file" title="Permalink to this headline">#</a></h3>
+<h3>3.1 Downloading a single target pixel file<a class="headerlink" href="#downloading-a-single-target-pixel-file" title="Permalink to this heading">#</a></h3>
 <p>When you call <code class="docutils literal notranslate"><span class="pre">download</span></code> on a search result containing more than one entry, it will download only the first entry in the search result. Lightkurve will raise a friendly warning to let you know when this occurs.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1285,7 +935,7 @@ sort_order
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda/lib/python3.10/site-packages/lightkurve/search.py:407: LightkurveWarning: Warning: 3 files available to download. Only the first file has been downloaded. Please use `download_all()` or specify additional criteria (e.g. quarter, campaign, or sector) to limit your search.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda/lib/python3.10/site-packages/lightkurve/search.py:414: LightkurveWarning: Warning: 3 files available to download. Only the first file has been downloaded. Please use `download_all()` or specify additional criteria (e.g. quarter, campaign, or sector) to limit your search.
   warnings.warn(
 </pre></div>
 </div>
@@ -1299,7 +949,7 @@ sort_order
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../../_images/kepler_searching_for_data_products_38_0.png" src="../../../../_images/kepler_searching_for_data_products_38_0.png" />
+<img alt="../../../../_images/349a06109cb73d733d97d37b7f762adf4da1ff081f96a79e43f30a14d3b4968f.png" src="../../../../_images/349a06109cb73d733d97d37b7f762adf4da1ff081f96a79e43f30a14d3b4968f.png" />
 </div>
 </div>
 <p>If we want to turn the TPF into a light curve, there is a <code class="docutils literal notranslate"><span class="pre">to_lightcurve</span></code> method.</p>
@@ -1311,102 +961,181 @@ sort_order
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>---------------------------------------------------------------------------
-AttributeError                            Traceback (most recent call last)
-Cell In[15], line 1
-----&gt; 1 lc = tpf.to_lightcurve()
-      2 lc.plot();
-
-File /usr/share/miniconda/lib/python3.10/site-packages/lightkurve/targetpixelfile.py:571, in TargetPixelFile.to_lightcurve(self, method, corrector, **kwargs)
-    569 method = validate_method(method, supported_methods=[&quot;aperture&quot;, &quot;prf&quot;, &quot;sap&quot;, &quot;sff&quot;, &quot;cbv&quot;, &quot;pld&quot;])
-    570 if method in [&quot;aperture&quot;, &quot;sap&quot;]:
---&gt; 571     return self.extract_aperture_photometry(**kwargs)
-    572 elif method == &quot;prf&quot;:
-    573     return self.prf_lightcurve(**kwargs)
-
-File /usr/share/miniconda/lib/python3.10/site-packages/lightkurve/targetpixelfile.py:2172, in KeplerTargetPixelFile.extract_aperture_photometry(self, aperture_mask, flux_method, centroid_method)
-   2168 # explicitly resolve default, so that the aperture_mask set in meta
-   2169 # later will be the resolved one
-   2170 aperture_mask = self._resolve_default_aperture_mask(aperture_mask)
--&gt; 2172 flux, flux_err, centroid_col, centroid_row = self._aperture_photometry(
-   2173     aperture_mask=aperture_mask,
-   2174     flux_method=flux_method,
-   2175     centroid_method=centroid_method,
-   2176 )
-   2177 keys = {
-   2178     &quot;centroid_col&quot;: centroid_col,
-   2179     &quot;centroid_row&quot;: centroid_row,
-   (...)
-   2189     &quot;targetid&quot;: self.targetid,
-   2190 }
-   2191 meta = {&quot;APERTURE_MASK&quot;: aperture_mask}
-
-File /usr/share/miniconda/lib/python3.10/site-packages/lightkurve/targetpixelfile.py:867, in TargetPixelFile._aperture_photometry(self, aperture_mask, flux_method, centroid_method)
-    864     log.warning(&quot;Warning: aperture mask contains zero pixels.&quot;)
-    866 # Estimate centroids
---&gt; 867 centroid_col, centroid_row = self.estimate_centroids(
-    868     apmask, method=centroid_method
-    869 )
-    871 # Estimate flux
-    872 if flux_method == &quot;sum&quot;:
-
-File /usr/share/miniconda/lib/python3.10/site-packages/lightkurve/targetpixelfile.py:814, in TargetPixelFile.estimate_centroids(self, aperture_mask, method)
-    812 method = validate_method(method, [&quot;moments&quot;, &quot;quadratic&quot;])
-    813 if method == &quot;moments&quot;:
---&gt; 814     return self._estimate_centroids_via_moments(aperture_mask=aperture_mask)
-    815 elif method == &quot;quadratic&quot;:
-    816     return self._estimate_centroids_via_quadratic(aperture_mask=aperture_mask)
-
-File /usr/share/miniconda/lib/python3.10/site-packages/lightkurve/targetpixelfile.py:821, in TargetPixelFile._estimate_centroids_via_moments(self, aperture_mask)
-    818 def _estimate_centroids_via_moments(self, aperture_mask):
-    819     &quot;&quot;&quot;Compute the &quot;center of mass&quot; of the light based on the 2D moments;
-    820     this is a helper method for `estimate_centroids()`.&quot;&quot;&quot;
---&gt; 821     aperture_mask = self._parse_aperture_mask(aperture_mask)
-    822     yy, xx = np.indices(self.shape[1:])
-    823     yy = self.row + yy
-
-File /usr/share/miniconda/lib/python3.10/site-packages/lightkurve/targetpixelfile.py:659, in TargetPixelFile._parse_aperture_mask(self, aperture_mask)
-    653     elif (
-    654         np.issubdtype(aperture_mask.dtype, np.integer)
-    655         and ((aperture_mask &amp; 2) == 2).any()
-    656     ):
-    657         # Kepler and TESS pipeline style integer flags
-    658         aperture_mask = (aperture_mask &amp; 2) == 2
---&gt; 659     elif isinstance(aperture_mask.flat[0], (np.integer, np.float)):
-    660         aperture_mask = aperture_mask.astype(bool)
-    661 self._last_aperture_mask = aperture_mask
-
-File /usr/share/miniconda/lib/python3.10/site-packages/numpy/__init__.py:305, in __getattr__(attr)
-    300     warnings.warn(
-    301         f&quot;In the future `np.{attr}` will be defined as the &quot;
-    302         &quot;corresponding NumPy scalar.&quot;, FutureWarning, stacklevel=2)
-    304 if attr in __former_attrs__:
---&gt; 305     raise AttributeError(__former_attrs__[attr])
-    307 # Importing Tester requires importing all of UnitTest which is not a
-    308 # cheap import Since it is mainly used in test suits, we lazy import it
-    309 # here to save on the order of 10 ms of import time for most users
-    310 #
-    311 # The previous way Tester was imported also had a side effect of adding
-    312 # the full `numpy.testing` namespace
-    313 if attr == &#39;testing&#39;:
-
-AttributeError: module &#39;numpy&#39; has no attribute &#39;float&#39;.
-`np.float` was a deprecated alias for the builtin `float`. To avoid this error in existing code, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
-The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
-    https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-</pre></div>
-</div>
+<img alt="../../../../_images/0154598752c2814ad76cd495f0dd0613994561ff9bc4986d286c7278622b7e9c.png" src="../../../../_images/0154598752c2814ad76cd495f0dd0613994561ff9bc4986d286c7278622b7e9c.png" />
 </div>
 </div>
 <p>For more information about using and plotting TPFs, please see the tutorials on using <em>Kepler</em> target pixel file products with Lightkurve and plotting <em>Kepler</em> target pixel file products with Lightkurve.</p>
 </section>
 <section id="downloading-a-collection-of-target-pixel-files">
-<h3>3.2 Downloading a collection of target pixel files<a class="headerlink" href="#downloading-a-collection-of-target-pixel-files" title="Permalink to this headline">#</a></h3>
+<h3>3.2 Downloading a collection of target pixel files<a class="headerlink" href="#downloading-a-collection-of-target-pixel-files" title="Permalink to this heading">#</a></h3>
 <p>You can also download multiple TPFs at a time using the <code class="docutils literal notranslate"><span class="pre">download_all</span></code> method, which returns a <code class="docutils literal notranslate"><span class="pre">TargetPixelFileCollection</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tpf_collection</span> <span class="o">=</span> <span class="n">search_result</span><span class="o">.</span><span class="n">download_all</span><span class="p">()</span>
 <span class="n">tpf_collection</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">IndexError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="nn">File /usr/share/miniconda/lib/python3.10/site-packages/astropy/io/fits/hdu/hdulist.py:1271,</span> in <span class="ni">HDUList._try_while_unread_hdus</span><span class="nt">(self, func, *args, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1270</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1271</span>     <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1272</span> <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+
+<span class="ne">IndexError</span>: list index out of range
+
+<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
+
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">16</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">tpf_collection</span> <span class="o">=</span> <span class="n">search_result</span><span class="o">.</span><span class="n">download_all</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">tpf_collection</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.10/site-packages/lightkurve/utils.py:563,</span> in <span class="ni">suppress_stdout.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">561</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span> <span class="o">=</span> <span class="n">devnull</span>
+<span class="g g-Whitespace">    </span><span class="mi">562</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">563</span>     <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">564</span> <span class="c1"># restore to default</span>
+<span class="g g-Whitespace">    </span><span class="mi">565</span> <span class="k">finally</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">566</span>     <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span> <span class="o">=</span> <span class="n">old_out</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.10/site-packages/lightkurve/search.py:494,</span> in <span class="ni">SearchResult.download_all</span><span class="nt">(self, quality_bitmask, download_dir, cutout_size, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">491</span> <span class="n">products</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="g g-Whitespace">    </span><span class="mi">492</span> <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">table</span><span class="p">)):</span>
+<span class="g g-Whitespace">    </span><span class="mi">493</span>     <span class="n">products</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+<span class="ne">--&gt; </span><span class="mi">494</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_download_one</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">495</span>             <span class="n">table</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">table</span><span class="p">[</span><span class="n">idx</span> <span class="p">:</span> <span class="n">idx</span> <span class="o">+</span> <span class="mi">1</span><span class="p">],</span>
+<span class="g g-Whitespace">    </span><span class="mi">496</span>             <span class="n">quality_bitmask</span><span class="o">=</span><span class="n">quality_bitmask</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">497</span>             <span class="n">download_dir</span><span class="o">=</span><span class="n">download_dir</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">498</span>             <span class="n">cutout_size</span><span class="o">=</span><span class="n">cutout_size</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">499</span>             <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">500</span>         <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">501</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">502</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">products</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">TargetPixelFile</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">503</span>     <span class="k">return</span> <span class="n">TargetPixelFileCollection</span><span class="p">(</span><span class="n">products</span><span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.10/site-packages/lightkurve/search.py:354,</span> in <span class="ni">SearchResult._download_one</span><span class="nt">(self, table, quality_bitmask, download_dir, cutout_size, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">352</span>     <span class="n">path</span> <span class="o">=</span> <span class="n">download_response</span><span class="p">[</span><span class="s2">&quot;Local Path&quot;</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">353</span>     <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Finished downloading.&quot;</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">354</span> <span class="k">return</span> <span class="n">read</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">quality_bitmask</span><span class="o">=</span><span class="n">quality_bitmask</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.10/site-packages/lightkurve/io/read.py:124,</span> in <span class="ni">read</span><span class="nt">(path_or_url, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">122</span> <span class="k">if</span> <span class="n">filetype</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">123</span>     <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">124</span>         <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="nb">__import__</span><span class="p">(</span><span class="s2">&quot;lightkurve&quot;</span><span class="p">),</span> <span class="n">filetype</span><span class="p">)(</span><span class="n">path_or_url</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">125</span>     <span class="k">except</span> <span class="ne">AttributeError</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">126</span>         <span class="k">raise</span> <span class="n">LightkurveError</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">127</span>             <span class="sa">f</span><span class="s2">&quot;Data product f</span><span class="si">{</span><span class="n">path_or_url</span><span class="si">}</span><span class="s2"> of type </span><span class="si">{</span><span class="n">filetype</span><span class="si">}</span><span class="s2"> is not supported &quot;</span> <span class="s2">&quot;in this version of Lightkurve.&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">128</span>         <span class="p">)</span> <span class="kn">from</span> <span class="nn">exc</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.10/site-packages/lightkurve/targetpixelfile.py:2062,</span> in <span class="ni">KeplerTargetPixelFile.__init__</span><span class="nt">(self, path, quality_bitmask, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2061</span> <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">quality_bitmask</span><span class="o">=</span><span class="s2">&quot;default&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">2062</span>     <span class="nb">super</span><span class="p">(</span><span class="n">KeplerTargetPixelFile</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">2063</span>         <span class="n">path</span><span class="p">,</span> <span class="n">quality_bitmask</span><span class="o">=</span><span class="n">quality_bitmask</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+<span class="g g-Whitespace">   </span><span class="mi">2064</span>     <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2065</span>     <span class="bp">self</span><span class="o">.</span><span class="n">quality_mask</span> <span class="o">=</span> <span class="n">KeplerQualityFlags</span><span class="o">.</span><span class="n">create_quality_mask</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">2066</span>         <span class="n">quality_array</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">hdu</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;QUALITY&quot;</span><span class="p">],</span> <span class="n">bitmask</span><span class="o">=</span><span class="n">quality_bitmask</span>
+<span class="g g-Whitespace">   </span><span class="mi">2067</span>     <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2069</span>     <span class="c1"># check to make sure the correct filetype has been provided</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.10/site-packages/lightkurve/targetpixelfile.py:105,</span> in <span class="ni">TargetPixelFile.__init__</span><span class="nt">(self, path, quality_bitmask, targetid, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">103</span>     <span class="bp">self</span><span class="o">.</span><span class="n">hdu</span> <span class="o">=</span> <span class="n">path</span>
+<span class="g g-Whitespace">    </span><span class="mi">104</span> <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">105</span>     <span class="bp">self</span><span class="o">.</span><span class="n">hdu</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">path</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">106</span> <span class="bp">self</span><span class="o">.</span><span class="n">quality_bitmask</span> <span class="o">=</span> <span class="n">quality_bitmask</span>
+<span class="g g-Whitespace">    </span><span class="mi">107</span> <span class="bp">self</span><span class="o">.</span><span class="n">targetid</span> <span class="o">=</span> <span class="n">targetid</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.10/site-packages/lightkurve/targetpixelfile.py:215,</span> in <span class="ni">TargetPixelFile.hdu</span><span class="nt">(self, value, keys)</span>
+<span class="g g-Whitespace">    </span><span class="mi">206</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Verify the file format when setting the value of `self.hdu`.</span>
+<span class="g g-Whitespace">    </span><span class="mi">207</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">208</span><span class="sd"> Raises a ValueError if `value` does not appear to be a Target Pixel File.</span>
+<span class="g g-Whitespace">    </span><span class="mi">209</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">210</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">keys</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">211</span>     <span class="k">if</span> <span class="o">~</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">212</span>         <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">213</span>             <span class="p">[</span>
+<span class="g g-Whitespace">    </span><span class="mi">214</span>                 <span class="n">value</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="n">ttype</span><span class="p">]</span> <span class="o">==</span> <span class="n">key</span>
+<span class="ne">--&gt; </span><span class="mi">215</span>                 <span class="k">for</span> <span class="n">ttype</span> <span class="ow">in</span> <span class="n">value</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;TTYPE*&quot;</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">216</span>             <span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">217</span>         <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">218</span>     <span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">219</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">220</span>             <span class="s2">&quot;File </span><span class="si">{}</span><span class="s2"> does not have a </span><span class="si">{}</span><span class="s2"> column, &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">221</span>             <span class="s2">&quot;is this a target pixel file?&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">path</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">222</span>         <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">223</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hdu</span> <span class="o">=</span> <span class="n">value</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.10/site-packages/astropy/io/fits/hdu/hdulist.py:382,</span> in <span class="ni">HDUList.__getitem__</span><span class="nt">(self, key)</span>
+<span class="g g-Whitespace">    </span><span class="mi">378</span> <span class="c1"># Originally this used recursion, but hypothetically an HDU with</span>
+<span class="g g-Whitespace">    </span><span class="mi">379</span> <span class="c1"># a very large number of HDUs could blow the stack, so use a loop</span>
+<span class="g g-Whitespace">    </span><span class="mi">380</span> <span class="c1"># instead</span>
+<span class="g g-Whitespace">    </span><span class="mi">381</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">382</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_try_while_unread_hdus</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">383</span>         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__getitem__</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_positive_index_of</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">384</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">385</span> <span class="k">except</span> <span class="ne">IndexError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">386</span>     <span class="c1"># Raise a more helpful IndexError if the file was not fully read.</span>
+<span class="g g-Whitespace">    </span><span class="mi">387</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_read_all</span><span class="p">:</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.10/site-packages/astropy/io/fits/hdu/hdulist.py:1273,</span> in <span class="ni">HDUList._try_while_unread_hdus</span><span class="nt">(self, func, *args, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1271</span>     <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1272</span> <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1273</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_read_next_hdu</span><span class="p">():</span>
+<span class="g g-Whitespace">   </span><span class="mi">1274</span>         <span class="k">continue</span>
+<span class="g g-Whitespace">   </span><span class="mi">1275</span>     <span class="k">else</span><span class="p">:</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.10/site-packages/astropy/io/fits/hdu/hdulist.py:1316,</span> in <span class="ni">HDUList._read_next_hdu</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1313</span>             <span class="n">offset</span> <span class="o">=</span> <span class="n">last</span><span class="o">.</span><span class="n">_data_offset</span> <span class="o">+</span> <span class="n">last</span><span class="o">.</span><span class="n">_data_size</span>
+<span class="g g-Whitespace">   </span><span class="mi">1314</span>             <span class="n">fileobj</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="n">offset</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">SEEK_SET</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1316</span>     <span class="n">hdu</span> <span class="o">=</span> <span class="n">_BaseHDU</span><span class="o">.</span><span class="n">readfrom</span><span class="p">(</span><span class="n">fileobj</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1317</span> <span class="k">except</span> <span class="ne">EOFError</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1318</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_read_all</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.10/site-packages/astropy/io/fits/hdu/base.py:363,</span> in <span class="ni">_BaseHDU.readfrom</span><span class="nt">(cls, fileobj, checksum, ignore_missing_end, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">357</span> <span class="n">hdu</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_readfrom_internal</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">358</span>     <span class="n">fileobj</span><span class="p">,</span> <span class="n">checksum</span><span class="o">=</span><span class="n">checksum</span><span class="p">,</span> <span class="n">ignore_missing_end</span><span class="o">=</span><span class="n">ignore_missing_end</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+<span class="g g-Whitespace">    </span><span class="mi">359</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">361</span> <span class="c1"># If the checksum had to be checked the data may have already been read</span>
+<span class="g g-Whitespace">    </span><span class="mi">362</span> <span class="c1"># from the file, in which case we don&#39;t want to seek relative</span>
+<span class="ne">--&gt; </span><span class="mi">363</span> <span class="n">fileobj</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="n">hdu</span><span class="o">.</span><span class="n">_data_offset</span> <span class="o">+</span> <span class="n">hdu</span><span class="o">.</span><span class="n">_data_size</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">SEEK_SET</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">364</span> <span class="k">return</span> <span class="n">hdu</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.10/site-packages/astropy/io/fits/file.py:435,</span> in <span class="ni">_File.seek</span><span class="nt">(self, offset, whence)</span>
+<span class="g g-Whitespace">    </span><span class="mi">433</span> <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_file</span><span class="p">,</span> <span class="s2">&quot;seek&quot;</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">434</span>     <span class="k">return</span>
+<span class="ne">--&gt; </span><span class="mi">435</span> <span class="bp">self</span><span class="o">.</span><span class="n">_file</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="n">offset</span><span class="p">,</span> <span class="n">whence</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">436</span> <span class="n">pos</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_file</span><span class="o">.</span><span class="n">tell</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">437</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span> <span class="ow">and</span> <span class="n">pos</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">:</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.10/gzip.py:393,</span> in <span class="ni">GzipFile.seek</span><span class="nt">(self, offset, whence)</span>
+<span class="g g-Whitespace">    </span><span class="mi">391</span> <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">mode</span> <span class="o">==</span> <span class="n">READ</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">392</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_check_not_closed</span><span class="p">()</span>
+<span class="ne">--&gt; </span><span class="mi">393</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_buffer</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="n">offset</span><span class="p">,</span> <span class="n">whence</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">395</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">offset</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.10/_compression.py:153,</span> in <span class="ni">DecompressReader.seek</span><span class="nt">(self, offset, whence)</span>
+<span class="g g-Whitespace">    </span><span class="mi">151</span> <span class="c1"># Read and discard data until we reach the desired position.</span>
+<span class="g g-Whitespace">    </span><span class="mi">152</span> <span class="k">while</span> <span class="n">offset</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">153</span>     <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">io</span><span class="o">.</span><span class="n">DEFAULT_BUFFER_SIZE</span><span class="p">,</span> <span class="n">offset</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">154</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">data</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">155</span>         <span class="k">break</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.10/gzip.py:510,</span> in <span class="ni">_GzipReader.read</span><span class="nt">(self, size)</span>
+<span class="g g-Whitespace">    </span><span class="mi">506</span>     <span class="k">if</span> <span class="n">buf</span> <span class="o">==</span> <span class="sa">b</span><span class="s2">&quot;&quot;</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">507</span>         <span class="k">raise</span> <span class="ne">EOFError</span><span class="p">(</span><span class="s2">&quot;Compressed file ended before the &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">508</span>                        <span class="s2">&quot;end-of-stream marker was reached&quot;</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">510</span> <span class="bp">self</span><span class="o">.</span><span class="n">_add_read_data</span><span class="p">(</span> <span class="n">uncompress</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">511</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pos</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">uncompress</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">512</span> <span class="k">return</span> <span class="n">uncompress</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.10/gzip.py:515,</span> in <span class="ni">_GzipReader._add_read_data</span><span class="nt">(self, data)</span>
+<span class="g g-Whitespace">    </span><span class="mi">514</span> <span class="k">def</span> <span class="nf">_add_read_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">515</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_crc</span> <span class="o">=</span> <span class="n">zlib</span><span class="o">.</span><span class="n">crc32</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_crc</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">516</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_stream_size</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_stream_size</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
 </div>
 </div>
@@ -1422,7 +1151,7 @@ The aliases was originally deprecated in NumPy 1.20; for more details and guidan
 </section>
 </section>
 <section id="searching-for-tess-full-frame-image-ffi-cutouts">
-<h2>4. Searching for <em>TESS</em> Full Frame Image (FFI) Cutouts<a class="headerlink" href="#searching-for-tess-full-frame-image-ffi-cutouts" title="Permalink to this headline">#</a></h2>
+<h2>4. Searching for <em>TESS</em> Full Frame Image (FFI) Cutouts<a class="headerlink" href="#searching-for-tess-full-frame-image-ffi-cutouts" title="Permalink to this heading">#</a></h2>
 <p>It is also possible to download targets observed in the <em>TESS</em> Full Frame Images (FFIs) using Lightkurve. This is done using <code class="docutils literal notranslate"><span class="pre">search_tesscut</span></code>, which utilizes the <a class="reference external" href="https://mast.stsci.edu/tesscut/">TESSCut</a> tool (<a class="reference external" href="https://ui.adsabs.harvard.edu/abs/2019ascl.soft05007B/abstract">Brasseur et. al 2019</a>).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1443,7 +1172,7 @@ The aliases was originally deprecated in NumPy 1.20; for more details and guidan
 </div>
 </section>
 <section id="performing-a-cone-search">
-<h2>5. Performing a Cone Search<a class="headerlink" href="#performing-a-cone-search" title="Permalink to this headline">#</a></h2>
+<h2>5. Performing a Cone Search<a class="headerlink" href="#performing-a-cone-search" title="Permalink to this heading">#</a></h2>
 <p>If you are interested in identifying a number of nearby targets, you can perform a cone search, which will return all available targets within a cone of a specfied radius on the sky. The radius can be either a <code class="docutils literal notranslate"><span class="pre">float</span></code> or an <code class="docutils literal notranslate"><span class="pre">astropy.units.Quantity</span></code> object. If a float is given, it will be assumed to be in units of arcseconds.  If <code class="docutils literal notranslate"><span class="pre">None</span></code> then we default to 0.0001 arcsec.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1456,13 +1185,13 @@ The aliases was originally deprecated in NumPy 1.20; for more details and guidan
 <p>The <code class="docutils literal notranslate"><span class="pre">distance</span></code> column describes the distance on the sky in arcseconds from the target or coordinates passed into the search.</p>
 </section>
 <section id="about-this-notebook">
-<h2>About this Notebook<a class="headerlink" href="#about-this-notebook" title="Permalink to this headline">#</a></h2>
+<h2>About this Notebook<a class="headerlink" href="#about-this-notebook" title="Permalink to this heading">#</a></h2>
 <p><strong>Authors</strong>: Nicholas Saunders (nksaun&#64;hawaii.edu)</p>
 <p><strong>Updated</strong>: September 28, 2020</p>
 </section>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="citing-lightkurve-and-astropy">
-<h1>Citing Lightkurve and Astropy<a class="headerlink" href="#citing-lightkurve-and-astropy" title="Permalink to this headline">#</a></h1>
+<section id="citing-lightkurve-and-astropy">
+<h1>Citing Lightkurve and Astropy<a class="headerlink" href="#citing-lightkurve-and-astropy" title="Permalink to this heading">#</a></h1>
 <p>If you use <code class="docutils literal notranslate"><span class="pre">lightkurve</span></code> or its dependencies in your published research, please cite the authors. Click the buttons below to copy BibTeX entries to your clipboard.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1486,7 +1215,7 @@ The aliases was originally deprecated in NumPy 1.20; for more details and guidan
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./notebooks/MAST/Kepler/kepler_searching_for_data_products"
         },
         predefinedOutput: true
@@ -1494,50 +1223,120 @@ The aliases was originally deprecated in NumPy 1.20; for more details and guidan
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../kepler_plotting_target_pixel_files/kepler_plotting_target_pixel_files.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Plotting <em>Kepler</em> Target Pixel File Products with Lightkurve</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../kepler_plotting_target_pixel_files/kepler_plotting_target_pixel_files.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Plotting <em>Kepler</em> Target Pixel File Products with Lightkurve</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="../kepler_using_light_curve_products_with_lightkurve/kepler_using_light_curve_products_with_lightkurve.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="../kepler_using_light_curve_products_with_lightkurve/kepler_using_light_curve_products_with_lightkurve.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Using <em>Kepler</em> Light Curve Products with Lightkurve</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Searching for <em>Kepler</em>/<em>K2</em> and <em>TESS</em> Data Products Using Lightkurve</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-goals">Learning Goals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imports">Imports</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-data-products-are-available">1. What Data Products are Available?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#searching-for-light-curves">2. Searching for Light Curves</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-a-single-light-curve">2.1 Downloading a single light curve</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-a-collection-of-light-curves">2.2 Downloading a collection of light curves</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#searching-for-target-pixel-files">3. Searching for Target Pixel Files</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-a-single-target-pixel-file">3.1 Downloading a single target pixel file</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-a-collection-of-target-pixel-files">3.2 Downloading a collection of target pixel files</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#searching-for-tess-full-frame-image-ffi-cutouts">4. Searching for <em>TESS</em> Full Frame Image (FFI) Cutouts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#performing-a-cone-search">5. Performing a Cone Search</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-this-notebook">About this Notebook</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#citing-lightkurve-and-astropy">Citing Lightkurve and Astropy</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner">
+<div class="bd-footer-content__inner container">
   
-    By STScI<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
-</div>
+<p class="component-author">
+By STScI
+</p>
 
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
 
-      </div>
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div></div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
