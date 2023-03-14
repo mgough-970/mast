@@ -35,8 +35,8 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/table.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/main.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/table.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -630,7 +630,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><i>Table length=0</i>
-<table id="table139661937269568-808416" class="table-striped table-bordered table-condensed">
+<table id="table140323077968976-645129" class="table-striped table-bordered table-condensed">
 <thead><tr><th>idx</th><th>dataproduct_type</th><th>filters</th><th>calib_level</th><th>t_exptime</th><th>proposal_pi</th><th>intentType</th><th>obsid</th></tr></thead>
 </table><style>table.dataTable {clear: both; width: auto !important; margin: 0 !important;}
 .dataTables_info, .dataTables_length, .dataTables_filter, .dataTables_paginate{
@@ -655,14 +655,14 @@ require.config({paths: {
     datatables: 'https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min'
 }});
 require(["datatables"], function(){
-    console.log("$('#table139661937269568-808416').dataTable()");
+    console.log("$('#table140323077968976-645129').dataTable()");
     
 jQuery.extend( jQuery.fn.dataTableExt.oSort, {
     "optionalnum-asc": astropy_sort_num,
     "optionalnum-desc": function (a,b) { return -astropy_sort_num(a, b); }
 });
 
-    $('#table139661937269568-808416').dataTable({
+    $('#table140323077968976-645129').dataTable({
         order: [],
         pageLength: 5,
         lengthMenu: [[5, 10, 25, 50, 100, 500, 1000, -1], [5, 10, 25, 50, 100, 500, 1000, 'All']],

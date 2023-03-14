@@ -35,8 +35,8 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/table.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/main.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/table.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -639,7 +639,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3511/3292562795.py:13: DeprecationWarning: Importing display from IPython.core.display is deprecated since IPython 7.14, please import from IPython display
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3282/3292562795.py:13: DeprecationWarning: Importing display from IPython.core.display is deprecated since IPython 7.14, please import from IPython display
   from IPython.core.display import display
 </pre></div>
 </div>
@@ -818,7 +818,7 @@ Columns=[&#39;calib_level&#39;, &#39;dataProduct_Type&#39;, &#39;dataRights&#39;
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=1</i>
-<table id="table140591014122336" class="table-striped table-bordered table-condensed">
+<table id="table140553169067344" class="table-striped table-bordered table-condensed">
 <thead><tr><th>obs_id</th><th>s_region</th></tr></thead>
 <thead><tr><th>object</th><th>object</th></tr></thead>
 <tr><td>tess2018206192942-s0001-1-2-0120-s</td><td>POLYGON 330.343781 -44.336357 324.663695 -33.277694 337.720618 -28.384546 344.128672 -38.561645 330.343781 -44.336357</td></tr>
@@ -894,34 +894,25 @@ Columns=[&#39;calib_level&#39;, &#39;dataProduct_Type&#39;, &#39;dataRights&#39;
 <span class="g g-Whitespace">    </span><span class="mi">302</span> <span class="n">job</span><span class="o">.</span><span class="n">raise_if_error</span><span class="p">()</span>
 <span class="g g-Whitespace">    </span><span class="mi">303</span> <span class="n">result</span> <span class="o">=</span> <span class="n">job</span><span class="o">.</span><span class="n">fetch_result</span><span class="p">()</span>
 
-<span class="nn">File /usr/share/miniconda/lib/python3.10/site-packages/pyvo/dal/tap.py:914,</span> in <span class="ni">AsyncTAPJob.wait</span><span class="nt">(self, phases, timeout)</span>
-<span class="g g-Whitespace">    </span><span class="mi">910</span> <span class="n">active_phases</span> <span class="o">=</span> <span class="p">{</span>
-<span class="g g-Whitespace">    </span><span class="mi">911</span>     <span class="s2">&quot;QUEUED&quot;</span><span class="p">,</span> <span class="s2">&quot;EXECUTING&quot;</span><span class="p">,</span> <span class="s2">&quot;RUN&quot;</span><span class="p">,</span> <span class="s2">&quot;COMPLETED&quot;</span><span class="p">,</span> <span class="s2">&quot;ERROR&quot;</span><span class="p">,</span> <span class="s2">&quot;UNKNOWN&quot;</span><span class="p">}</span>
-<span class="g g-Whitespace">    </span><span class="mi">913</span> <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">914</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_update</span><span class="p">(</span><span class="n">wait_for_statechange</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">915</span>     <span class="c1"># use the cached value</span>
-<span class="g g-Whitespace">    </span><span class="mi">916</span>     <span class="n">cur_phase</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_job</span><span class="o">.</span><span class="n">phase</span>
+<span class="nn">File /usr/share/miniconda/lib/python3.10/site-packages/pyvo/dal/tap.py:869,</span> in <span class="ni">AsyncTAPJob.run</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">865</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">866</span><span class="sd"> starts the job / change phase to RUN</span>
+<span class="g g-Whitespace">    </span><span class="mi">867</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">868</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">869</span>     <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_session</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">870</span>         <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">/phase&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">),</span> <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;PHASE&quot;</span><span class="p">:</span> <span class="s2">&quot;RUN&quot;</span><span class="p">})</span>
+<span class="g g-Whitespace">    </span><span class="mi">871</span>     <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">872</span> <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">RequestException</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
 
-<span class="nn">File /usr/share/miniconda/lib/python3.10/site-packages/pyvo/dal/tap.py:656,</span> in <span class="ni">AsyncTAPJob._update</span><span class="nt">(self, wait_for_statechange, timeout)</span>
-<span class="g g-Whitespace">    </span><span class="mi">654</span> <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">655</span>     <span class="k">if</span> <span class="n">wait_for_statechange</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">656</span>         <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">657</span>             <span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
-<span class="g g-Whitespace">    </span><span class="mi">658</span>                 <span class="s2">&quot;WAIT&quot;</span><span class="p">:</span> <span class="s2">&quot;-1&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">659</span>             <span class="p">}</span>
-<span class="g g-Whitespace">    </span><span class="mi">660</span>         <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">661</span>     <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">662</span>         <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
-
-<span class="nn">File /usr/share/miniconda/lib/python3.10/site-packages/requests/sessions.py:600,</span> in <span class="ni">Session.get</span><span class="nt">(self, url, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">592</span><span class="w"> </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;Sends a GET request. Returns :class:`Response` object.</span>
-<span class="g g-Whitespace">    </span><span class="mi">593</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">594</span><span class="sd"> :param url: URL for the new :class:`Request` object.</span>
-<span class="g g-Whitespace">    </span><span class="mi">595</span><span class="sd"> :param \*\*kwargs: Optional arguments that ``request`` takes.</span>
-<span class="g g-Whitespace">    </span><span class="mi">596</span><span class="sd"> :rtype: requests.Response</span>
-<span class="g g-Whitespace">    </span><span class="mi">597</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">599</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s2">&quot;allow_redirects&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">600</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="nn">File /usr/share/miniconda/lib/python3.10/site-packages/requests/sessions.py:635,</span> in <span class="ni">Session.post</span><span class="nt">(self, url, data, json, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">624</span> <span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">625</span><span class="w">     </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;Sends a POST request. Returns :class:`Response` object.</span>
+<span class="g g-Whitespace">    </span><span class="mi">626</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">627</span><span class="sd">     :param url: URL for the new :class:`Request` object.</span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">    </span><span class="mi">632</span><span class="sd">     :rtype: requests.Response</span>
+<span class="g g-Whitespace">    </span><span class="mi">633</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">635</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s2">&quot;POST&quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">json</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
 <span class="nn">File /usr/share/miniconda/lib/python3.10/site-packages/requests/sessions.py:587,</span> in <span class="ni">Session.request</span><span class="nt">(self, method, url, params, data, headers, cookies, files, auth, timeout, allow_redirects, proxies, hooks, stream, verify, cert, json)</span>
 <span class="g g-Whitespace">    </span><span class="mi">582</span> <span class="n">send_kwargs</span> <span class="o">=</span> <span class="p">{</span>

@@ -1,4 +1,3 @@
-[![ci_validation](https://github.com/TheRealZoidberg/demoTest/workflows/ci_validation/badge.svg)](https://github.com/TheRealZoidberg/demoTest/actions?query=workflow%3Aci_validation)
-
+[![Build HTML](https://github.com/TheRealZoidberg/mast/actions/workflows/ci_html_build.yml/badge.svg)](https://github.com/TheRealZoidberg/mast/actions/workflows/ci_html_build.yml)
 # notebook_ci_template
 Structural template for notebook CI system
